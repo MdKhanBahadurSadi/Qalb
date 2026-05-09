@@ -7,7 +7,7 @@ class SunnahDiet extends AutoDisposeAsyncNotifier<String?> {
 
   @override
   FutureOr<String?> build() {
-    const apiKey = 'AIzaSyC0VybR-UCmZiW4B1sBNbs3-KrN0x8F4RM'; 
+    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
       model: 'gemini-2.5-flash',
       apiKey: apiKey,

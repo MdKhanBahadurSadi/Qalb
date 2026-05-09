@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:qalb/features/smoking/presentation/providers/smoking_provider.dart';
 import 'package:qalb/features/smoking/domain/entities/health_milestone.dart';
 import 'package:qalb/shared/widgets/scaffold_with_nav_bar.dart';
+import 'dart:ui';
 
 class SmokingDashboardScreen extends ConsumerStatefulWidget {
   const SmokingDashboardScreen({super.key});
@@ -35,19 +36,12 @@ class _SmokingDashboardScreenState extends ConsumerState<SmokingDashboardScreen>
 
     return Scaffold(
       body: CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
         slivers: [
-          SliverAppBar(
-            expandedHeight: 280,
+          SliverPersistentHeader(
             pinned: true,
-            stretch: true,
-            backgroundColor: theme.colorScheme.primary,
-            foregroundColor: theme.colorScheme.onPrimary,
-            flexibleSpace: FlexibleSpaceBar(
-              background: _HeroCounter(
-                quitDate: profile.quitDate!,
-                isActive: isActive,
-              ),
+            delegate: _SmokingHeaderDelegate(
+              quitDate: profile.quitDate!,
+              isActive: isActive,
             ),
           ),
           SliverToBoxAdapter(
@@ -84,95 +78,111 @@ class _SmokingDashboardScreenState extends ConsumerState<SmokingDashboardScreen>
   }
 }
 
-class _HeroCounter extends ConsumerWidget {
+class _SmokingHeaderDelegate extends SliverPersistentHeaderDelegate {
   final DateTime quitDate;
   final bool isActive;
-  const _HeroCounter({required this.quitDate, required this.isActive});
+  final double expandedHeight = 280;
+  final double collapsedHeight = 80;
+
+  _SmokingHeaderDelegate({required this.quitDate, required this.isActive});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    final progress = (shrinkOffset / (expandedHeight - collapsedHeight)).clamp(0.0, 1.0);
     final theme = Theme.of(context);
-    if (isActive) {
-      ref.watch(smokingTickerProvider);
-    }
     
-    final duration = SmokingCalculations.getDuration(quitDate);
-
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            theme.colorScheme.primary,
-            theme.colorScheme.primary.withOpacity(0.8),
-          ],
+          colors: [theme.colorScheme.primary, theme.colorScheme.primaryContainer],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 40),
-          Text(
-            'আলহামদুলিল্লাহ!',
-            style: theme.textTheme.headlineSmall?.copyWith(
-              color: theme.colorScheme.onPrimary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'আপনি ধূমপান মুক্ত আছেন',
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onPrimary.withOpacity(0.8),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _TimePart(theme: theme, value: duration.inDays.toString(), label: 'দিন'),
-              _TimePart(theme: theme, value: (duration.inHours % 24).toString(), label: 'ঘণ্টা'),
-              _TimePart(theme: theme, value: (duration.inMinutes % 60).toString(), label: 'মিনিট'),
-              _TimePart(theme: theme, value: (duration.inSeconds % 60).toString(), label: 'সেকেন্ড'),
-            ],
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(32 * (1 - progress)),
+          bottomRight: Radius.circular(32 * (1 - progress)),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1 * (1 - progress)),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(32 * (1 - progress)),
+          bottomRight: Radius.circular(32 * (1 - progress)),
+        ),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5 * progress, sigmaY: 5 * progress),
+          child: Consumer(builder: (context, ref, _) {
+            if (isActive) ref.watch(smokingTickerProvider);
+            final duration = SmokingCalculations.getDuration(quitDate);
+            
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (progress < 0.5) ...[
+                    const SizedBox(height: 20),
+                    Text('আলহামদুলিল্লাহ!', style: theme.textTheme.headlineSmall?.copyWith(color: theme.colorScheme.onPrimary)),
+                    const SizedBox(height: 4),
+                    Text('আপনি ধূমপান মুক্ত আছেন', style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.8))),
+                    const SizedBox(height: 20),
+                  ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _CompactTimePart(theme: theme, value: duration.inDays.toString(), label: 'দিন'),
+                      _CompactTimePart(theme: theme, value: (duration.inHours % 24).toString(), label: 'ঘণ্টা'),
+                      _CompactTimePart(theme: theme, value: (duration.inMinutes % 60).toString(), label: 'মিনিট'),
+                      _CompactTimePart(theme: theme, value: (duration.inSeconds % 60).toString(), label: 'সেকেন্ড'),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }),
+        ),
+      ),
     );
   }
+
+  @override
+  double get maxExtent => expandedHeight;
+
+  @override
+  double get minExtent => collapsedHeight;
+
+  @override
+  bool shouldRebuild(covariant _SmokingHeaderDelegate oldDelegate) => true;
 }
 
-class _TimePart extends StatelessWidget {
+class _CompactTimePart extends StatelessWidget {
   final ThemeData theme;
   final String value;
   final String label;
-  const _TimePart({required this.theme, required this.value, required this.label});
+  const _CompactTimePart({required this.theme, required this.value, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            value.padLeft(2, '0'),
-            style: theme.textTheme.headlineMedium?.copyWith(
-              color: theme.colorScheme.onPrimary,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            label,
-            style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onPrimary.withOpacity(0.7),
-            ),
-          ),
+          Text(value.padLeft(2, '0'), style: theme.textTheme.titleMedium?.copyWith(color: theme.colorScheme.onPrimary, fontWeight: FontWeight.bold)),
+          Text(label, style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.7))),
         ],
       ),
     );
   }
 }
+
+// ... (Keep existing _StatsGrid, _StatCard, _MilestoneTimeline classes as they were in the original file)
 
 class _StatsGrid extends StatelessWidget {
   final ThemeData theme;

@@ -56,7 +56,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
               sliver: SliverList(
                 delegate: SliverChildListDelegate([
-                  _buildSectionTitle('আধ্যাত্মিক এআই (AI)', textColor),
+                  _buildSectionTitle('স্পিরিচুয়াল এআই (AI)', textColor),
                   const SizedBox(height: 16),
                   PremiumFeatureCard(
                     title: 'কুরআনিক প্রজ্ঞা (AI)',
@@ -65,17 +65,17 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                     gradientColors: isDark
                         ? [const Color(0xFF283593), const Color(0xFF1A237E)]
                         : [const Color(0xFF3949AB), const Color(0xFF283593)],
-                    onTap: () => context.push('/home/islamic/wisdom'),
+                    onTap: () => context.push('/home/spiritual/wisdom'),
                   ),
                   const SizedBox(height: 16),
                   PremiumFeatureCard(
                     title: 'আন-নাসিহা (AI)',
-                    subtitle: 'আপনার ইসলামিক ওয়েলনেস গাইড',
+                    subtitle: 'আপনার স্পিরিচুয়াল ওয়েলনেস গাইড',
                     icon: Icons.auto_awesome_rounded,
                     gradientColors: isDark
                         ? [const Color(0xFF00695C), const Color(0xFF004D40)]
                         : [const Color(0xFF00897B), const Color(0xFF00695C)],
-                    onTap: () => context.push('/home/islamic/nasiha'),
+                    onTap: () => context.push('/home/spiritual/nasiha'),
                   ),
                   const SizedBox(height: 16),
                   PremiumFeatureCard(
@@ -85,7 +85,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                     gradientColors: isDark
                         ? [const Color(0xFF004D40), const Color(0xFF00251A)]
                         : [const Color(0xFF26A69A), const Color(0xFF00796B)],
-                    onTap: () => context.push('/home/islamic/mood-wellness'),
+                    onTap: () => context.push('/home/spiritual/mood-wellness'),
                   ),
                   const SizedBox(height: 16),
                   PremiumFeatureCard(
@@ -95,7 +95,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                     gradientColors: isDark
                         ? [const Color(0xFFBF360C), const Color(0xFF870000)]
                         : [const Color(0xFFE65100), const Color(0xFFBF360C)],
-                    onTap: () => context.push('/home/islamic/diet-planner'),
+                    onTap: () => context.push('/home/spiritual/diet-planner'),
                   ),
                   const SizedBox(height: 32),
                   _buildSectionTitle('প্রয়োজনীয় টুলস', textColor),
@@ -113,7 +113,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                         title: 'নামাজের সময়',
                         icon: Icons.access_time_filled_rounded,
                         color: Colors.blueAccent,
-                        route: '/home/islamic/prayer-times',
+                        route: '/home/spiritual/prayer-times',
                         surfaceColor: surfaceColor,
                         textColor: textColor,
                         isDark: isDark,
@@ -123,7 +123,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                         title: 'জিকির কাউন্টার',
                         icon: Icons.touch_app_rounded,
                         color: Colors.teal,
-                        route: '/home/islamic/dhikr',
+                        route: '/home/spiritual/dhikr',
                         surfaceColor: surfaceColor,
                         textColor: textColor,
                         isDark: isDark,
@@ -133,7 +133,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                         title: 'রোজা ট্র্যাকার',
                         icon: Icons.calendar_month_rounded,
                         color: Colors.green,
-                        route: '/home/islamic/fasting',
+                        route: '/home/spiritual/fasting',
                         surfaceColor: surfaceColor,
                         textColor: textColor,
                         isDark: isDark,
@@ -143,7 +143,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                         title: 'খাদ্য ও পুষ্টি',
                         icon: Icons.eco_rounded,
                         color: Colors.orangeAccent,
-                        route: '/home/islamic/nutrition',
+                        route: '/home/spiritual/nutrition',
                         surfaceColor: surfaceColor,
                         textColor: textColor,
                         isDark: isDark,
@@ -171,7 +171,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
         centerTitle: false,
         titlePadding: const EdgeInsets.only(left: 24.0, bottom: 16.0, right: 24.0),
         title: Text(
-          'ইসলামিক সেবাসমূহ',
+          'স্পিরিচুয়াল সেবাসমূহ',
           style: GoogleFonts.hindSiliguri(
             fontWeight: FontWeight.w700,
             fontSize: 22,

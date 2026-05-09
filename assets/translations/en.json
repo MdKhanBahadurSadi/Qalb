@@ -23,7 +23,7 @@
   "nav": {
     "home": "Home",
     "predict": "Risk",
-    "islamic": "Islamic",
+    "spiritual": "Spiritual",
     "smoking": "Smoking",
     "profile": "Profile"
   },
@@ -35,7 +35,7 @@
     "low_risk": "Low Risk",
     "very_high_risk": "Very High Risk"
   },
-  "islamic": {
+  "spiritual": {
     "prayer_times": "Prayer Times",
     "dhikr": "Dhikr",
     "fasting": "Fasting Tracker",

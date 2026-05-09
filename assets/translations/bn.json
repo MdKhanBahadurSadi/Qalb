@@ -23,7 +23,7 @@
   "nav": {
     "home": "হোম",
     "predict": "রিস্ক",
-    "islamic": "ইসলামিক",
+    "spiritual": "স্পিরিচুয়াল",
     "smoking": "ধূমপান",
     "profile": "প্রোফাইল"
   },
@@ -35,7 +35,7 @@
     "low_risk": "কম ঝুঁকি",
     "very_high_risk": "অত্যন্ত উচ্চ ঝুঁকি"
   },
-  "islamic": {
+  "spiritual": {
     "prayer_times": "নামাজের সময়",
     "dhikr": "জিকির",
     "fasting": "রোজা ট্র্যাকার",

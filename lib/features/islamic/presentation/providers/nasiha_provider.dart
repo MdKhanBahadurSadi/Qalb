@@ -18,7 +18,7 @@ class NasihaChat extends StateNotifier<List<ChatMessage>> {
   }
 
   void _initializeChat() {
-    const apiKey = 'AIzaSyC0VybR-UCmZiW4B1sBNbs3-KrN0x8F4RM';
+    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
       model: 'gemini-2.5-flash',
       apiKey: apiKey,
@@ -45,7 +45,7 @@ class NasihaChat extends StateNotifier<List<ChatMessage>> {
 - কুরআন এবং সহিহ বুখারি/মুসলিমকে প্রাধান্য দিন।
 - দুর্বল বা জাল হাদিস বর্জন করুন।
 - কোনো মাযহাবী বিতর্ক বা দলীয় মতাদর্শ এড়িয়ে চলুন।
-- বাংলা ভাষায় শান্ত, সহানুভূতিশীল, সংক্ষিপ্ত এবং ব্যবহারিক উত্তর দিন।
+- বাংলা ভাষায় শান্ত, সহানুভূতিশীল, সংক্ষিপ্ত এবং ব্যবহারিক উত্তর উত্তর দিন।
 
 আউটপুট ফরম্যাট:
 ১. ছোট একটি সহানুভূতিশীল বাক্য।

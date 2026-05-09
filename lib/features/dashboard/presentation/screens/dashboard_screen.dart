@@ -246,7 +246,7 @@ class DashboardScreen extends ConsumerWidget {
         const SizedBox(height: 12),
         Row(
           children: [
-            Expanded(child: _buildActionCard(context, theme, Icons.mosque, 'ইসলামিক গাইড', 'সুন্নাহ স্বাস্থ্য', '/home/islamic', Colors.teal)),
+            Expanded(child: _buildActionCard(context, theme, Icons.mosque, 'স্পিরিচুয়াল গাইড', 'সুন্নাহ স্বাস্থ্য', '/home/spiritual', Colors.teal)),
             const SizedBox(width: 12),
             Expanded(child: _buildActionCard(context, theme, Icons.bar_chart, 'রিপোর্ট', 'বিস্তারিত ইতিহাস', '/report', Colors.deepPurpleAccent)),
           ],
@@ -350,7 +350,7 @@ class DashboardScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 4),
                   GestureDetector(
-                    onTap: () => context.go('/home/islamic'),
+                    onTap: () => context.go('/home/spiritual'),
                     child: Text(
                       'সব ওয়াক্ত', 
                       style: theme.textTheme.labelSmall?.copyWith(
@@ -376,7 +376,7 @@ class DashboardScreen extends ConsumerWidget {
   Widget _buildDailyHadithCard(BuildContext context, ThemeData theme) {
     final hadiths = [
       {
-        'ar': 'نِعْمَتَانِ مَغْبُونٌ ফِيْهِمَا كَثِيْرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ',
+        'ar': 'نِعْمَتَانِ مَغْبُونٌ فِيْهِمَا كَثِيْرٌ مِنَ النَّاسِ: الصِّحَّةُ وَالْفَرَاغُ',
         'bn': 'দুটি নিয়ামত এমন রয়েছে যাতে অধিকাংশ মানুষ ক্ষতিগ্রস্ত; সুস্থতা এবং অবসর সময়।',
         'ref': 'সহীহ বুখারী: ৬৪১২'
       },

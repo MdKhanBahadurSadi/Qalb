@@ -54,7 +54,7 @@ class ScaffoldWithNavBar extends ConsumerWidget {
           NavigationDestination(
             icon: Icon(Icons.mosque_outlined, color: theme.colorScheme.onSurfaceVariant),
             selectedIcon: Icon(Icons.mosque, color: theme.colorScheme.primary),
-            label: 'nav.islamic'.tr(),
+            label: 'nav.spiritual'.tr(),
           ),
           NavigationDestination(
             icon: Icon(Icons.smoke_free_outlined, color: theme.colorScheme.onSurfaceVariant),

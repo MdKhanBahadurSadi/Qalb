@@ -135,7 +135,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/home/islamic',
+                path: '/home/spiritual',
                 pageBuilder: (context, state) => const NoTransitionPage(
                   child: IslamicScreen(),
                 ),
