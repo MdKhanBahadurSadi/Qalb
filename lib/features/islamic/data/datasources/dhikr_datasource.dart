@@ -1,0 +1,98 @@
+import '../../domain/entities/dhikr.dart';
+
+class DhikrDataSource {
+  static List<Dhikr> getDhikrs() {
+    return [
+      const Dhikr(
+        id: '1',
+        title: 'SubhanAllah',
+        arabic: 'سُبْحَانَ اللّهِ',
+        bangla: 'সুবহানাল্লাহ',
+        translation: 'আল্লাহ অতি পবিত্র',
+        targetCount: 33,
+        healthBenefit: 'হৃদয়ে প্রশান্তি আনে, কর্টিসল কমায়',
+      ),
+      const Dhikr(
+        id: '2',
+        title: 'Alhamdulillah',
+        arabic: 'اَلْحَمْدُ لِلّهِ',
+        bangla: 'আলহামদুলিল্লাহ',
+        translation: 'সব প্রশংসা আল্লাহর জন্য',
+        targetCount: 33,
+        healthBenefit: 'কৃতজ্ঞতা মানসিক স্বাস্থ্য উন্নত করে',
+      ),
+      const Dhikr(
+        id: '3',
+        title: 'Allahu Akbar',
+        arabic: 'اَللّهُ أَكْبَرُ',
+        bangla: 'আল্লাহু আকবার',
+        translation: 'আল্লাহ সবচেয়ে মহান',
+        targetCount: 34,
+        healthBenefit: 'মনের উদ্বেগ কমায়',
+      ),
+      const Dhikr(
+        id: '4',
+        title: 'La ilaha illallah',
+        arabic: 'لَا إِلَهَ إِلَّا اللّهُ',
+        bangla: 'লা ইলাহা ইল্লাল্লাহ',
+        translation: 'আল্লাহ ছাড়া কোনো উপাস্য নেই',
+        targetCount: 100,
+        healthBenefit: 'শ্বাস-প্রশ্বাস নিয়ন্ত্রণ করে',
+      ),
+      const Dhikr(
+        id: '5',
+        title: 'Astaghfirullah',
+        arabic: 'أَسْتَغْفِرُ اللّهَ',
+        bangla: 'আস্তাগফিরুল্লাহ',
+        translation: 'আমি আল্লাহর ক্ষমা প্রার্থনা করছি',
+        targetCount: 100,
+        healthBenefit: 'মানসিক বোঝা মুক্ত করে',
+      ),
+      const Dhikr(
+        id: '6',
+        title: 'SubhanAllahi wa bihamdihi',
+        arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+        bangla: 'সুবহানাল্লাহি ওয়া বিহামদিহি',
+        translation: 'আল্লাহর পবিত্রতা ও প্রশংসা বর্ণনা করছি',
+        targetCount: 100,
+        healthBenefit: 'মনের প্রশান্তি ও গুনাহ মাফ করে',
+      ),
+      const Dhikr(
+        id: '7',
+        title: 'SubhanAllahil Azim',
+        arabic: 'سُبْحَانَ اللَّهِ الْعَظِيمِ',
+        bangla: 'সুবহানাল্লাহিল আজিম',
+        translation: 'মহান আল্লাহ অতি পবিত্র',
+        targetCount: 100,
+        healthBenefit: 'ঈমানি শক্তি বৃদ্ধি করে',
+      ),
+      const Dhikr(
+        id: '8',
+        title: 'La hawla wa la quwwata',
+        arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
+        bangla: 'লা হাওলা ওয়া লা কুয়্যাতা',
+        translation: 'আল্লাহ ছাড়া কোনো শক্তি বা ক্ষমতা নেই',
+        targetCount: 33,
+        healthBenefit: 'মানসিক শক্তি ও ধৈর্য বাড়ায়',
+      ),
+      const Dhikr(
+        id: '9',
+        title: 'Hasbunallahu wa ni\'mal wakil',
+        arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+        bangla: 'হাসবুনাল্লাহু ওয়া নি\'মাল ওয়াকিল',
+        translation: 'আল্লাহই আমাদের জন্য যথেষ্ট',
+        targetCount: 44,
+        healthBenefit: 'বিপদ-আপদে দুশ্চিন্তা দূর করে',
+      ),
+      const Dhikr(
+        id: '10',
+        title: 'Salawat (Durood)',
+        arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ',
+        bangla: 'সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম',
+        translation: 'হে আল্লাহ! মুহাম্মদের ওপর রহমত বর্ষণ করো',
+        targetCount: 10,
+        healthBenefit: 'আত্মিক প্রশান্তি ও রহমত বয়ে আনে',
+      ),
+    ];
+  }
+}

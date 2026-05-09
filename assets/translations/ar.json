@@ -1,0 +1,50 @@
+{
+  "app_name": "قلب — Qalb",
+  "common": {
+    "next": "التالي",
+    "back": "رجوع",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ ما",
+    "retry": "إعادة المحاولة",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "تسجيل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "name": "الاسم",
+    "logout": "تسجيل الخروج",
+    "forgot_password": "نسيت كلمة المرور؟"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "predict": "المخاطر",
+    "islamic": "إسلامي",
+    "smoking": "التدخين",
+    "profile": "الملف الشخصي"
+  },
+  "prediction": {
+    "title": "اختبار مخاطر القلب",
+    "calculate": "حساب المخاطر",
+    "high_risk": "مخاطر عالية",
+    "moderate_risk": "مخاطر متوسطة",
+    "low_risk": "مخاطর منخفضة",
+    "very_high_risk": "مخاطر عالية جداً"
+  },
+  "islamic": {
+    "prayer_times": "أوقات الصلاة",
+    "dhikr": "الأذكار",
+    "fasting": "تتبع الصيام",
+    "nutrition": "التغذية النبوية"
+  },
+  "smoking": {
+    "title": "الإقلاع عن التدخين",
+    "smoke_free": "بدون تدخين",
+    "days": "أيام",
+    "craving": "هل تشعر بالرغبة؟"
+  }
+}

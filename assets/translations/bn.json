@@ -1,0 +1,50 @@
+{
+  "app_name": "Qalb — قلب",
+  "common": {
+    "next": "পরবর্তী",
+    "back": "পিছনে",
+    "save": "সংরক্ষণ",
+    "cancel": "বাতিল",
+    "loading": "লোড হচ্ছে...",
+    "error": "কিছু একটা ভুল হয়েছে",
+    "retry": "আবার চেষ্টা করুন",
+    "yes": "হ্যাঁ",
+    "no": "না"
+  },
+  "auth": {
+    "login": "লগইন",
+    "register": "নিবন্ধন",
+    "email": "ইমেইল",
+    "password": "পাসওয়ার্ড",
+    "name": "নাম",
+    "logout": "লগআউট",
+    "forgot_password": "পাসওয়ার্ড ভুলে গেছেন?"
+  },
+  "nav": {
+    "home": "হোম",
+    "predict": "রিস্ক",
+    "islamic": "ইসলামিক",
+    "smoking": "ধূমপান",
+    "profile": "প্রোফাইল"
+  },
+  "prediction": {
+    "title": "হার্ট রিস্ক পরীক্ষা",
+    "calculate": "রিস্ক হিসাব করুন",
+    "high_risk": "উচ্চ ঝুঁকি",
+    "moderate_risk": "মাঝারি ঝুঁকি",
+    "low_risk": "কম ঝুঁকি",
+    "very_high_risk": "অত্যন্ত উচ্চ ঝুঁকি"
+  },
+  "islamic": {
+    "prayer_times": "নামাজের সময়",
+    "dhikr": "জিকির",
+    "fasting": "রোজা ট্র্যাকার",
+    "nutrition": "সুন্নাহ পুষ্টি"
+  },
+  "smoking": {
+    "title": "ধূমপান মুক্তি",
+    "smoke_free": "ধূমপান মুক্ত",
+    "days": "দিন",
+    "craving": "ক্র্যাভিং হচ্ছে?"
+  }
+}

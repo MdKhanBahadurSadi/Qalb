@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1030361143944",
+    "project_id": "civicpulse-ai",
+    "storage_bucket": "civicpulse-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030361143944:android:84e205bdb8ebab05f09d3d",
+        "android_client_info": {
+          "package_name": "com.example.aafiyah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhftVWJo5DH1iQixO4DRekSavz_pegPtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030361143944:android:49bd4738970f0b90f09d3d",
+        "android_client_info": {
+          "package_name": "com.qalb.qalb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhftVWJo5DH1iQixO4DRekSavz_pegPtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
