@@ -193,10 +193,10 @@ class _FoodCard extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: isHadith 
-                ? theme.colorScheme.primary.withOpacity(0.05) 
-                : theme.colorScheme.surfaceVariant.withOpacity(0.3),
+                ? theme.colorScheme.primary.withValues(alpha: 0.05) 
+                : theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(12),
-            border: isHadith ? Border.all(color: theme.colorScheme.primary.withOpacity(0.1)) : null,
+            border: isHadith ? Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.1)) : null,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

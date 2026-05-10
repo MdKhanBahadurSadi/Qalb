@@ -48,12 +48,12 @@ class _PremiumFeatureCardState extends State<PremiumFeatureCard> with SingleTick
             borderRadius: BorderRadius.circular(28),
             boxShadow: [
               BoxShadow(
-                color: widget.gradientColors.last.withOpacity(0.4),
+                color: widget.gradientColors.last.withValues(alpha: 0.4),
                 blurRadius: 20,
                 offset: const Offset(0, 10),
               ),
               BoxShadow(
-                color: Colors.white.withOpacity(0.1),
+                color: Colors.white.withValues(alpha: 0.1),
                 blurRadius: 0,
                 spreadRadius: 1,
                 offset: const Offset(0, 1),
@@ -71,7 +71,7 @@ class _PremiumFeatureCardState extends State<PremiumFeatureCard> with SingleTick
                   height: 100,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white.withOpacity(0.05),
+                    color: Colors.white.withValues(alpha: 0.05),
                   ),
                 ),
               ),
@@ -80,10 +80,10 @@ class _PremiumFeatureCardState extends State<PremiumFeatureCard> with SingleTick
                   Container(
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
+                      color: Colors.white.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
-                        color: Colors.white.withOpacity(0.3),
+                        color: Colors.white.withValues(alpha: 0.3),
                         width: 1,
                       ),
                     ),
@@ -106,7 +106,7 @@ class _PremiumFeatureCardState extends State<PremiumFeatureCard> with SingleTick
                         Text(
                           widget.subtitle,
                           style: GoogleFonts.hindSiliguri(
-                            color: Colors.white.withOpacity(0.85),
+                            color: Colors.white.withValues(alpha: 0.85),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                           ),
@@ -117,7 +117,7 @@ class _PremiumFeatureCardState extends State<PremiumFeatureCard> with SingleTick
                   Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
+                      color: Colors.white.withValues(alpha: 0.1),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),

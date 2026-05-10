@@ -82,7 +82,7 @@ class QuranicWisdomScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: isDark ? Colors.black26 : Colors.black.withOpacity(0.05),
+                  color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.05),
                   blurRadius: 15,
                   offset: const Offset(0, 5),
                 ),
@@ -147,11 +147,11 @@ class QuranicWisdomScreen extends ConsumerWidget {
                     color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.05),
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: isDark ? Colors.black26 : Colors.black.withOpacity(0.03),
+                        color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.03),
                         blurRadius: 10,
                         offset: const Offset(0, 4),
                       ),
@@ -162,7 +162,7 @@ class QuranicWisdomScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: topicColor.withOpacity(0.15),
+                          color: topicColor.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(topic['icon'], color: topicColor, size: 24),
@@ -207,11 +207,11 @@ class QuranicWisdomScreen extends ConsumerWidget {
               color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
               borderRadius: BorderRadius.circular(28),
               border: Border.all(
-                color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.05),
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: isDark ? Colors.black26 : Colors.black.withOpacity(0.05),
+                  color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.05),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),
@@ -222,7 +222,7 @@ class QuranicWisdomScreen extends ConsumerWidget {
                 Icon(
                   Icons.format_quote_rounded,
                   size: 48,
-                  color: isDark ? const Color(0xFF7986CB).withOpacity(0.5) : const Color(0xFF3949AB).withOpacity(0.2),
+                  color: isDark ? const Color(0xFF7986CB).withValues(alpha: 0.5) : const Color(0xFF3949AB).withValues(alpha: 0.2),
                 ),
                 const SizedBox(height: 16),
                 SelectableText(
@@ -231,7 +231,7 @@ class QuranicWisdomScreen extends ConsumerWidget {
                   style: GoogleFonts.hindSiliguri(
                     fontSize: 18,
                     height: 1.8,
-                    color: isDark ? Colors.white.withOpacity(0.9) : const Color(0xFF222222),
+                    color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF222222),
                   ),
                 ),
               ],
@@ -250,7 +250,7 @@ class QuranicWisdomScreen extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               elevation: 4,
-              shadowColor: const Color(0xFF3949AB).withOpacity(0.5),
+              shadowColor: const Color(0xFF3949AB).withValues(alpha: 0.5),
             ),
           ),
           const SizedBox(height: 20),

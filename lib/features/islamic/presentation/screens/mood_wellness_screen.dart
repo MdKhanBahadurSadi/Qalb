@@ -79,10 +79,10 @@ class MoodWellnessScreen extends ConsumerWidget {
                 return Card(
                   elevation: 0,
                   margin: EdgeInsets.zero,
-                  color: moodColor.withOpacity(0.1),
+                  color: moodColor.withValues(alpha: 0.1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
-                    side: BorderSide(color: moodColor.withOpacity(0.3)),
+                    side: BorderSide(color: moodColor.withValues(alpha: 0.3)),
                   ),
                   child: InkWell(
                     onTap: () => ref.read(moodWellnessProvider.notifier).getGuidance(mood['id']),

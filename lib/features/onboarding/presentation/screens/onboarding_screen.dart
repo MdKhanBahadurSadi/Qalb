@@ -92,7 +92,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                           Container(
                             padding: const EdgeInsets.all(40),
                             decoration: BoxDecoration(
-                              color: theme.colorScheme.onPrimary.withOpacity(0.15),
+                              color: theme.colorScheme.onPrimary.withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(data.icon, size: 100, color: theme.colorScheme.onPrimary),
@@ -111,7 +111,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                             data.subtitle,
                             textAlign: TextAlign.center,
                             style: theme.textTheme.bodyLarge?.copyWith(
-                              color: theme.colorScheme.onPrimary.withOpacity(0.8),
+                              color: theme.colorScheme.onPrimary.withValues(alpha: 0.8),
                             ),
                           ),
                         ],
@@ -135,7 +135,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                           height: 8,
                           width: _currentPage == index ? 24 : 8,
                           decoration: BoxDecoration(
-                            color: theme.colorScheme.onPrimary.withOpacity(_currentPage == index ? 1.0 : 0.4),
+                            color: theme.colorScheme.onPrimary.withValues(alpha: _currentPage == index ? 1.0 : 0.4),
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),

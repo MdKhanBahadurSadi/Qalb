@@ -26,7 +26,6 @@ import '../../features/islamic/presentation/screens/mood_wellness_screen.dart';
 import '../../features/islamic/presentation/screens/quranic_wisdom_screen.dart';
 import '../../features/smoking/presentation/screens/smoking_screen.dart';
 import '../../features/smoking/presentation/screens/smoking_setup_screen.dart';
-import '../../features/smoking/presentation/screens/smoking_dashboard_screen.dart';
 import '../../features/smoking/presentation/screens/craving_screen.dart';
 import '../../features/smoking/presentation/screens/craving_log_screen.dart';
 import '../../features/smoking/presentation/screens/breathing_exercise_screen.dart';

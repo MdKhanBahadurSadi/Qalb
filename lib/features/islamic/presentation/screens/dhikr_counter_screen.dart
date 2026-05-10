@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:vibration/vibration.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../domain/entities/dhikr.dart';
 import '../providers/dhikr_provider.dart';
 
@@ -116,8 +115,8 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: isDark 
-                ? [theme.colorScheme.surface, theme.colorScheme.background]
-                : [theme.colorScheme.primary, theme.colorScheme.primary.withOpacity(0.8)],
+                ? [theme.colorScheme.surface, theme.colorScheme.surface]
+                : [theme.colorScheme.primary, theme.colorScheme.primary.withValues(alpha: 0.8)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -154,7 +153,7 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
                 Text(
                   widget.dhikr.bangla,
                   style: theme.textTheme.bodyLarge?.copyWith(
-                    color: theme.colorScheme.onPrimary.withOpacity(0.7),
+                    color: theme.colorScheme.onPrimary.withValues(alpha: 0.7),
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -162,7 +161,7 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
                   margin: const EdgeInsets.symmetric(horizontal: 24),
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.onPrimary.withOpacity(0.15),
+                    color: theme.colorScheme.onPrimary.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -184,7 +183,7 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
                       child: CircularProgressIndicator(
                         value: progress.clamp(0, 1),
                         strokeWidth: 12,
-                        backgroundColor: theme.colorScheme.onPrimary.withOpacity(0.1),
+                        backgroundColor: theme.colorScheme.onPrimary.withValues(alpha: 0.1),
                         color: isDark ? theme.colorScheme.primary : theme.colorScheme.onPrimary,
                       ),
                     ),
@@ -206,7 +205,7 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
                         Text(
                           '/ ${widget.dhikr.targetCount}',
                           style: theme.textTheme.titleMedium?.copyWith(
-                            color: theme.colorScheme.onPrimary.withOpacity(0.6),
+                            color: theme.colorScheme.onPrimary.withValues(alpha: 0.6),
                           ),
                         ),
                       ],
@@ -217,7 +216,7 @@ class _DhikrCounterScreenState extends ConsumerState<DhikrCounterScreen>
                 Text(
                   'যেকোনো জায়গায় tap করুন',
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onPrimary.withOpacity(0.4),
+                    color: theme.colorScheme.onPrimary.withValues(alpha: 0.4),
                   ),
                 ),
                 const SizedBox(height: 40),

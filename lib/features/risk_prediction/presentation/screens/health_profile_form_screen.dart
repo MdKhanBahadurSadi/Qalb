@@ -74,7 +74,7 @@ class HealthProfileFormScreen extends ConsumerWidget {
                         shape: BoxShape.circle,
                         color: formState.currentStep == index
                             ? theme.colorScheme.primary
-                            : theme.colorScheme.surfaceVariant,
+                            : theme.colorScheme.surfaceContainerHighest,
                       ),
                     ),
                   ),
@@ -253,9 +253,9 @@ class _Step1BasicInfo extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: theme.colorScheme.primary.withOpacity(0.1),
+            color: theme.colorScheme.primary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: theme.colorScheme.primary.withOpacity(0.2)),
+            border: Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.2)),
           ),
           child: Row(
             children: [
@@ -459,7 +459,7 @@ Widget _buildSlider(ThemeData theme, String label, double value, double min, dou
         divisions: (max - min).toInt() > 0 ? (max - min).toInt() : 1,
         onChanged: onChanged,
         activeColor: theme.colorScheme.primary,
-        inactiveColor: theme.colorScheme.primary.withOpacity(0.2),
+        inactiveColor: theme.colorScheme.primary.withValues(alpha: 0.2),
       ),
     ],
   );

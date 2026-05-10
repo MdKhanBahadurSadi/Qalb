@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'app_text_styles.dart';
 
+
+
 class AppTheme {
   static const double kRadiusSm = 8.0;
   static const double kRadiusMd = 12.0;
@@ -12,7 +14,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      colorScheme: const ColorScheme.light(
+      colorScheme: ColorScheme.light(
         primary: AppColors.primary,
         onPrimary: AppColors.onPrimary,
         primaryContainer: AppColors.primaryContainer,
@@ -23,12 +25,12 @@ class AppTheme {
         onSecondaryContainer: AppColors.onSecondaryContainer,
         surface: AppColors.surfaceLight,
         onSurface: AppColors.onSurfaceLight,
-        surfaceVariant: AppColors.surfaceVariantLight,
-        onSurfaceVariant: AppColors.onSurfaceVariantLight,
-        background: AppColors.backgroundLight,
-        onBackground: AppColors.onBackgroundLight,
+        surfaceContainerHighest: AppColors.surfaceContainerHighestLight,
         error: AppColors.error,
         onError: AppColors.onError,
+      ).copyWith(
+        surfaceContainerHighest: AppColors.surfaceContainerHighestLight,
+        onSurfaceVariant: AppColors.onSurfaceVariantLight,
       ),
       textTheme: AppTextStyles.getTextTheme(),
       appBarTheme: const AppBarTheme(
@@ -55,7 +57,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.surfaceVariantLight.withOpacity(0.3),
+        fillColor: AppColors.surfaceContainerHighestLight.withValues(alpha: 0.3),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(kRadiusMd),
           borderSide: BorderSide.none,
@@ -77,19 +79,19 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      colorScheme: const ColorScheme.dark(
-        primary: AppColors.primary, // Using primary for consistency or could use a lighter teal
+      colorScheme: ColorScheme.dark(
+        primary: AppColors.primary,
         onPrimary: AppColors.onPrimary,
         secondary: AppColors.secondary,
         onSecondary: AppColors.onSecondary,
         surface: AppColors.surfaceDark,
         onSurface: AppColors.onSurfaceDark,
-        surfaceVariant: AppColors.surfaceVariantDark,
-        onSurfaceVariant: AppColors.onSurfaceVariantDark,
-        background: AppColors.backgroundDark,
-        onBackground: AppColors.onBackgroundDark,
+        surfaceContainerHighest: AppColors.surfaceContainerHighestDark,
         error: AppColors.error,
         onError: AppColors.onError,
+      ).copyWith(
+        surfaceContainerHighest: AppColors.surfaceContainerHighestDark,
+        onSurfaceVariant: AppColors.onSurfaceVariantDark,
       ),
       textTheme: AppTextStyles.getTextTheme(),
       appBarTheme: const AppBarTheme(
@@ -116,7 +118,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: AppColors.surfaceVariantDark.withOpacity(0.3),
+        fillColor: AppColors.surfaceContainerHighestDark.withValues(alpha: 0.3),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(kRadiusMd),
           borderSide: BorderSide.none,
@@ -134,3 +136,4 @@ class AppTheme {
     );
   }
 }
+

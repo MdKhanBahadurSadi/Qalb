@@ -120,7 +120,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
             end: Alignment.bottomCenter,
             colors: isDark
               ? [theme.colorScheme.surface, theme.colorScheme.background]
-              : [theme.colorScheme.primary, theme.colorScheme.primary.withOpacity(0.8)],
+              : [theme.colorScheme.primary, theme.colorScheme.primary.withValues(alpha: 0.8)],
           ),
         ),
         child: SafeArea(
@@ -142,7 +142,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
               Text(
                 _countdown.toString(),
                 style: theme.textTheme.displayLarge?.copyWith(
-                  color: (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withOpacity(0.7),
+                  color: (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withValues(alpha: 0.7),
                 ),
               ),
               const Spacer(),
@@ -151,7 +151,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
                 child: Text(
                   'অনুশীলন বন্ধ করুন', 
                   style: theme.textTheme.labelLarge?.copyWith(
-                    color: (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withOpacity(0.5)
+                    color: (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withValues(alpha: 0.5)
                   ),
                 ),
               ),
@@ -166,7 +166,7 @@ class _BreathingExerciseScreenState extends State<BreathingExerciseScreen> with 
   Widget _buildRoundIndicator(ThemeData theme) {
     final isDark = theme.brightness == Brightness.dark;
     final activeColor = isDark ? theme.colorScheme.primary : const Color(0xFF4DB6AC);
-    final inactiveColor = (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withOpacity(0.24);
+    final inactiveColor = (isDark ? theme.colorScheme.onSurface : theme.colorScheme.onPrimary).withValues(alpha: 0.24);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -258,7 +258,7 @@ class _BreathingPainter extends CustomPainter {
     // Layered glow effect
     for (int i = 3; i > 0; i--) {
       final glowPaint = Paint()
-        ..color = color.withOpacity(0.1 * (4 - i))
+        ..color = color.withValues(alpha: 0.1 * (4 - i))
         ..maskFilter = MaskFilter.blur(BlurStyle.normal, 10.0 * i);
       canvas.drawCircle(center, radius + (5 * i), glowPaint);
     }
@@ -272,7 +272,7 @@ class _BreathingPainter extends CustomPainter {
     // Inner detail - Using theme-agnostic light highlight
     final detailPaint = Paint()
       ..shader = RadialGradient(
-        colors: [Colors.white.withOpacity(0.4), Colors.transparent],
+        colors: [Colors.white.withValues(alpha: 0.4), Colors.transparent],
       ).createShader(Rect.fromCircle(center: center, radius: radius));
     canvas.drawCircle(center, radius * 0.8, detailPaint);
   }

@@ -1,0 +1,62 @@
+﻿Analyzing qalb...                                               
+
+  error - The named parameter 'onsurfaceContainerHighest' isn't defined - lib\core\theme\app_theme.dart:27:9 - undefined_named_parameter
+  error - The named parameter 'onsurfaceContainerHighest' isn't defined - lib\core\theme\app_theme.dart:86:9 - undefined_named_parameter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\login_screen.dart:80:52 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\login_screen.dart:136:52 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\login_screen.dart:170:48 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\profile_screen.dart:68:80 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\profile_screen.dart:73:80 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\profile_screen.dart:123:80 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\auth\presentation\screens\profile_screen.dart:241:94 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\dashboard\presentation\screens\dashboard_screen.dart:221:90 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\dashboard\presentation\screens\dashboard_screen.dart:280:86 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\dashboard\presentation\screens\dashboard_screen.dart:311:90 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\dashboard\presentation\screens\dashboard_screen.dart:337:90 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\dashboard\presentation\screens\dashboard_screen.dart:415:82 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\dhikr_list_screen.dart:101:44 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:102:79 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:112:91 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:119:93 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:129:51 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:155:82 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:257:87 - undefined_getter
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\features\islamic\presentation\screens\islamic_screen_redesign.dart:45:35 - prefer_const_literals_to_create_immutables
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\features\islamic\presentation\screens\islamic_screen_redesign.dart:53:35 - prefer_const_literals_to_create_immutables
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\mood_wellness_screen.dart:62:40 - undefined_getter
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\features\islamic\presentation\screens\nasiha_screen.dart:5:8 - unnecessary_import
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\prayer_times_screen.dart:24:33 - deprecated_member_use
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\sunnah_diet_planner_screen.dart:101:58 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\sunnah_diet_planner_screen.dart:129:58 - undefined_getter
+warning - The value of the local variable 'theme' isn't used - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:11:11 - unused_local_variable
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:69:44 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\islamic\presentation\widgets\prayer_card.dart:76:39 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:178:86 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:408:76 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\risk_prediction\presentation\screens\report_screen.dart:157:79 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\risk_prediction\presentation\screens\report_screen.dart:252:81 - undefined_getter
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:122:63 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:210:42 - deprecated_member_use
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:228:85 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\craving_log_screen.dart:71:79 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\craving_log_screen.dart:258:102 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\craving_log_screen.dart:259:84 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\craving_screen.dart:29:42 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\craving_screen.dart:114:48 - undefined_getter
+warning - Unused import: 'package:qalb/features/smoking/domain/entities/health_milestone.dart' - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:5:8 - unused_import
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:284:82 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:360:97 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:372:96 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:206:84 - undefined_getter
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:28:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:59:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:91:7 - avoid_print
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\app_text_field.dart:55:40 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\empty_state.dart:45:42 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\risk_gauge.dart:55:48 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\scaffold_with_nav_bar.dart:45:70 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\scaffold_with_nav_bar.dart:50:73 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\scaffold_with_nav_bar.dart:55:72 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\scaffold_with_nav_bar.dart:60:76 - undefined_getter
+  error - The getter 'onsurfaceContainerHighest' isn't defined for the type 'ColorScheme' - lib\shared\widgets\scaffold_with_nav_bar.dart:65:71 - undefined_getter
+

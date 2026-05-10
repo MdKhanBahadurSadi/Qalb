@@ -22,7 +22,7 @@ class AppColors {
   static const onBackgroundLight = Color(0xFF191C1A);
   static const surfaceLight = Color(0xFFFDFDF5);
   static const onSurfaceLight = Color(0xFF191C1A);
-  static const surfaceVariantLight = Color(0xFFDBE5DE);
+  static const surfaceContainerHighestLight = Color(0xFFDBE5DE);
   static const onSurfaceVariantLight = Color(0xFF404944);
 
   // Backgrounds & Surfaces (Dark)
@@ -30,7 +30,7 @@ class AppColors {
   static const onBackgroundDark = Color(0xFFE1E3DF);
   static const surfaceDark = Color(0xFF152535);
   static const onSurfaceDark = Color(0xFFE1E3DF);
-  static const surfaceVariantDark = Color(0xFF404944);
+  static const surfaceContainerHighestDark = Color(0xFF404944);
   static const onSurfaceVariantDark = Color(0xFFBFC9C2);
 
   // Risk colors

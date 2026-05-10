@@ -133,7 +133,7 @@ class _CravingLogScreenState extends ConsumerState<CravingLogScreen> {
                   }
                 });
               },
-              selectedColor: theme.colorScheme.primary.withOpacity(0.2),
+              selectedColor: theme.colorScheme.primary.withValues(alpha: 0.2),
               checkmarkColor: theme.colorScheme.primary,
             );
           }).toList(),

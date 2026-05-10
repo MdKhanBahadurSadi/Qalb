@@ -125,7 +125,7 @@ class _DhikrCard extends StatelessWidget {
               const SizedBox(height: 4),
               LinearProgressIndicator(
                 value: progress.clamp(0, 1),
-                backgroundColor: theme.colorScheme.surfaceVariant,
+                backgroundColor: theme.colorScheme.surfaceContainerHighest,
                 color: theme.colorScheme.primary,
                 minHeight: 6,
                 borderRadius: BorderRadius.circular(3),

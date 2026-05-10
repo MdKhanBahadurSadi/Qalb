@@ -92,14 +92,14 @@ class PrayerTimesScreen extends ConsumerWidget {
             Text(
               'পরবর্তী নামাজের বাকি',
               style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onPrimary.withOpacity(0.8),
+                color: theme.colorScheme.onPrimary.withValues(alpha: 0.8),
               ),
             ),
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: theme.colorScheme.onPrimary.withOpacity(0.2),
+                color: theme.colorScheme.onPrimary.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(

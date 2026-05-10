@@ -104,7 +104,7 @@ class _SmokingHeaderDelegate extends SliverPersistentHeaderDelegate {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1 * (1 - progress)),
+            color: Colors.black.withValues(alpha: 0.1 * (1 - progress)),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -130,7 +130,7 @@ class _SmokingHeaderDelegate extends SliverPersistentHeaderDelegate {
                     const SizedBox(height: 20),
                     Text('আলহামদুলিল্লাহ!', style: theme.textTheme.headlineSmall?.copyWith(color: theme.colorScheme.onPrimary)),
                     const SizedBox(height: 4),
-                    Text('আপনি ধূমপান মুক্ত আছেন', style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.8))),
+                    Text('আপনি ধূমপান মুক্ত আছেন', style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onPrimary.withValues(alpha: 0.8))),
                     const SizedBox(height: 20),
                   ],
                   Row(
@@ -175,7 +175,7 @@ class _CompactTimePart extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(value.padLeft(2, '0'), style: theme.textTheme.titleMedium?.copyWith(color: theme.colorScheme.onPrimary, fontWeight: FontWeight.bold)),
-          Text(label, style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.7))),
+          Text(label, style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onPrimary.withValues(alpha: 0.7))),
         ],
       ),
     );
@@ -270,9 +270,9 @@ class _StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -330,7 +330,7 @@ class _MilestoneTimeline extends ConsumerWidget {
                       width: 24,
                       height: 24,
                       decoration: BoxDecoration(
-                        color: m.isAchieved ? achievedColor : theme.colorScheme.surfaceVariant,
+                        color: m.isAchieved ? achievedColor : theme.colorScheme.surfaceContainerHighest,
                         shape: BoxShape.circle,
                       ),
                       child: m.isAchieved
@@ -341,7 +341,7 @@ class _MilestoneTimeline extends ConsumerWidget {
                       Expanded(
                         child: Container(
                           width: 2,
-                          color: m.isAchieved ? achievedColor : theme.colorScheme.surfaceVariant,
+                          color: m.isAchieved ? achievedColor : theme.colorScheme.surfaceContainerHighest,
                         ),
                       ),
                   ],
@@ -379,7 +379,7 @@ class _MilestoneTimeline extends ConsumerWidget {
                             child: LinearProgressIndicator(
                               value: currentDuration.inSeconds /
                                   m.timeAfterQuitting.inSeconds.clamp(1, double.maxFinite).toInt(),
-                              backgroundColor: theme.colorScheme.surfaceVariant,
+                              backgroundColor: theme.colorScheme.surfaceContainerHighest,
                               color: theme.colorScheme.primary,
                               minHeight: 6,
                             ),

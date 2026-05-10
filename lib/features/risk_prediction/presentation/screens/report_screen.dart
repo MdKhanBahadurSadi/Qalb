@@ -127,7 +127,7 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
               ),
               belowBarData: BarAreaData(
                 show: true,
-                color: theme.colorScheme.primary.withOpacity(0.1),
+                color: theme.colorScheme.primary.withValues(alpha: 0.1),
               ),
             ),
           ],
@@ -145,7 +145,7 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.green.withOpacity(0.1),
+          backgroundColor: Colors.green.withValues(alpha: 0.1),
           child: const Icon(Icons.check, color: Colors.green),
         ),
         title: Text(

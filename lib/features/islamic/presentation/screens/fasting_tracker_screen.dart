@@ -66,7 +66,7 @@ class FastingTrackerScreen extends ConsumerWidget {
               decoration: BoxDecoration(
                 color: theme.colorScheme.errorContainer,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: theme.colorScheme.error.withOpacity(0.2)),
+                border: Border.all(color: theme.colorScheme.error.withValues(alpha: 0.2)),
               ),
               child: Row(
                 children: [
@@ -98,8 +98,8 @@ class FastingTrackerScreen extends ConsumerWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: state.isFastingToday 
-              ? [theme.colorScheme.primary, theme.colorScheme.primary.withOpacity(0.8)] 
-              : [theme.colorScheme.surfaceVariant, theme.colorScheme.onSurfaceVariant.withOpacity(0.2)],
+              ? [theme.colorScheme.primary, theme.colorScheme.primary.withValues(alpha: 0.8)] 
+              : [theme.colorScheme.surfaceContainerHighest, theme.colorScheme.onSurfaceVariant.withValues(alpha: 0.2)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -125,7 +125,7 @@ class FastingTrackerScreen extends ConsumerWidget {
             value: state.isFastingToday,
             onChanged: (_) => ref.read(fastingProvider.notifier).toggleFasting(),
             activeColor: theme.colorScheme.onPrimary,
-            activeTrackColor: theme.colorScheme.onPrimary.withOpacity(0.3),
+            activeTrackColor: theme.colorScheme.onPrimary.withValues(alpha: 0.3),
             inactiveThumbColor: theme.colorScheme.onSurfaceVariant,
             inactiveTrackColor: theme.colorScheme.surface,
           ),
@@ -138,9 +138,9 @@ class FastingTrackerScreen extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
@@ -238,7 +238,7 @@ class FastingTrackerScreen extends ConsumerWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withOpacity(0.1), 
+              color: theme.colorScheme.primary.withValues(alpha: 0.1), 
               shape: BoxShape.circle,
             ),
             child: Icon(icon, size: 20, color: theme.colorScheme.primary),

@@ -96,7 +96,7 @@ class CravingScreen extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              backgroundColor: color.withOpacity(0.1),
+              backgroundColor: color.withValues(alpha: 0.1),
               child: Icon(icon, color: color),
             ),
             const SizedBox(width: 16),

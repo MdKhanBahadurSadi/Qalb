@@ -83,7 +83,7 @@ class DashboardScreen extends ConsumerWidget {
         background: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [theme.colorScheme.primary, theme.colorScheme.primary.withOpacity(0.8)],
+              colors: [theme.colorScheme.primary, theme.colorScheme.primary.withValues(alpha: 0.8)],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -96,7 +96,7 @@ class DashboardScreen extends ConsumerWidget {
           children: [
             Text(
               'আস-সালামু আলাইকুম,',
-              style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.7)),
+              style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onPrimary.withValues(alpha: 0.7)),
             ),
             Text(
               userName,
@@ -117,7 +117,7 @@ class DashboardScreen extends ConsumerWidget {
           padding: const EdgeInsets.only(right: 16),
           child: CircleAvatar(
             radius: 18,
-            backgroundColor: theme.colorScheme.onPrimary.withOpacity(0.2),
+            backgroundColor: theme.colorScheme.onPrimary.withValues(alpha: 0.2),
             child: Icon(Icons.person, color: theme.colorScheme.onPrimary),
           ),
         ),
@@ -135,7 +135,7 @@ class DashboardScreen extends ConsumerWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             gradient: LinearGradient(
-              colors: [theme.colorScheme.secondary, theme.colorScheme.secondary.withOpacity(0.8)],
+              colors: [theme.colorScheme.secondary, theme.colorScheme.secondary.withValues(alpha: 0.8)],
             ),
           ),
           child: Column(
@@ -188,7 +188,7 @@ class DashboardScreen extends ConsumerWidget {
                   height: 60,
                   child: CircularProgressIndicator(
                     value: result.score / 100,
-                    backgroundColor: theme.colorScheme.surfaceVariant,
+                    backgroundColor: theme.colorScheme.surfaceContainerHighest,
                     color: categoryColor,
                     strokeWidth: 6,
                   ),
@@ -207,7 +207,7 @@ class DashboardScreen extends ConsumerWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: categoryColor.withOpacity(0.1),
+                      color: categoryColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
@@ -261,9 +261,9 @@ class DashboardScreen extends ConsumerWidget {
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: color.withOpacity(0.1)),
+        side: BorderSide(color: color.withValues(alpha: 0.1)),
       ),
-      color: color.withOpacity(0.05),
+      color: color.withValues(alpha: 0.05),
       child: InkWell(
         onTap: () => context.push(route),
         borderRadius: BorderRadius.circular(16),
@@ -386,9 +386,9 @@ class DashboardScreen extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: theme.colorScheme.primary.withOpacity(0.05),
+        color: theme.colorScheme.primary.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: theme.colorScheme.primary.withOpacity(0.1)),
+        border: Border.all(color: theme.colorScheme.primary.withValues(alpha: 0.1)),
       ),
       child: Column(
         children: [
@@ -430,7 +430,7 @@ class DashboardScreen extends ConsumerWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: theme.colorScheme.primaryContainer.withOpacity(0.3),
+        color: theme.colorScheme.primaryContainer.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

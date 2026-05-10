@@ -79,10 +79,10 @@ class ProfileScreen extends ConsumerWidget {
   Widget _buildHealthSummaryTile(BuildContext context, ThemeData theme) {
     return Card(
       elevation: 0,
-      color: theme.colorScheme.primary.withOpacity(0.05),
+      color: theme.colorScheme.primary.withValues(alpha: 0.05),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: theme.colorScheme.primary.withOpacity(0.1)),
+        side: BorderSide(color: theme.colorScheme.primary.withValues(alpha: 0.1)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -129,7 +129,7 @@ class ProfileScreen extends ConsumerWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
           decoration: BoxDecoration(
-            color: statusColor.withOpacity(0.1),
+            color: statusColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Text(

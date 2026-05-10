@@ -52,7 +52,7 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
               'আপনার ইসলামিক ওয়েলনেস গাইড',
               style: GoogleFonts.hindSiliguri(
                 fontSize: 12,
-                color: Colors.white.withOpacity(0.8),
+                color: Colors.white.withValues(alpha: 0.8),
               ),
             ),
           ],
@@ -103,7 +103,7 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF004D40).withOpacity(0.2) : const Color(0xFFE0F2F1),
+                color: isDark ? const Color(0xFF004D40).withValues(alpha: 0.2) : const Color(0xFFE0F2F1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -169,13 +169,13 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
           ),
           boxShadow: [
             BoxShadow(
-              color: isDark ? Colors.black26 : Colors.black.withOpacity(0.05),
+              color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
             if (!isDark && !isUser)
               BoxShadow(
-                color: Colors.black.withOpacity(0.02),
+                color: Colors.black.withValues(alpha: 0.02),
                 blurRadius: 0,
                 spreadRadius: 1,
               ),
@@ -186,7 +186,7 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
           style: GoogleFonts.hindSiliguri(
             color: isUser 
                 ? Colors.white 
-                : (isDark ? Colors.white.withOpacity(0.9) : const Color(0xFF222222)),
+                : (isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF222222)),
             fontSize: 16,
             height: 1.4,
           ),
@@ -207,7 +207,7 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
         color: isDark ? const Color(0xFF1E1E1E) : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: isDark ? Colors.black26 : Colors.black.withOpacity(0.05),
+            color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, -5),
           ),
@@ -247,7 +247,7 @@ class _NasihaScreenState extends ConsumerState<NasihaScreen> {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF00695C).withOpacity(0.3),
+                  color: const Color(0xFF00695C).withValues(alpha: 0.3),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 ),

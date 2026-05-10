@@ -34,7 +34,7 @@ class RiskGauge extends StatelessWidget {
                 painter: _GaugePainter(
                   score: value,
                   primaryColor: statusColor,
-                  backgroundColor: theme.colorScheme.surfaceVariant.withOpacity(0.3),
+                  backgroundColor: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
                 ),
               ),
               Column(
@@ -127,7 +127,7 @@ class _GaugePainter extends CustomPainter {
 
     // Subtle Glow
     final glowPaint = Paint()
-      ..color = primaryColor.withOpacity(0.2)
+      ..color = primaryColor.withValues(alpha: 0.2)
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth * 1.5
       ..strokeCap = StrokeCap.round

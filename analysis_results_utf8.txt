@@ -1,0 +1,180 @@
+﻿Analyzing qalb...                                               
+
+warning - Unused import: '../../features/smoking/presentation/screens/smoking_dashboard_screen.dart' - lib\core\router\app_router.dart:29:8 - unused_import
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:26:9 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:28:9 - deprecated_member_use
+   info - 'onBackground' is deprecated and shouldn't be used. Use onSurface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:29:9 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\core\theme\app_theme.dart:58:50 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:87:9 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:89:9 - deprecated_member_use
+   info - 'onBackground' is deprecated and shouldn't be used. Use onSurface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\core\theme\app_theme.dart:90:9 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\core\theme\app_theme.dart:119:49 - deprecated_member_use
+  error - Undefined name 'ProviderFor' used as an annotation - lib\features\auth\presentation\providers\auth_provider.g.dart:12:1 - undefined_annotation
+  error - Undefined name 'AuthNotifier' - lib\features\auth\presentation\providers\auth_provider.g.dart:12:14 - undefined_identifier
+  error - The name 'AutoDisposeNotifierProvider' isn't a class - lib\features\auth\presentation\providers\auth_provider.g.dart:14:5 - creation_with_non_type
+  error - The name 'AuthNotifier' isn't a type, so it can't be used as a type argument - lib\features\auth\presentation\providers\auth_provider.g.dart:14:33 - non_type_as_type_argument
+  error - The name 'AsyncValue' isn't a type, so it can't be used as a type argument - lib\features\auth\presentation\providers\auth_provider.g.dart:14:47 - non_type_as_type_argument
+  error - Undefined name 'AuthNotifier' - lib\features\auth\presentation\providers\auth_provider.g.dart:15:3 - undefined_identifier
+  error - The getter 'new' isn't defined for the type 'InvalidType' - lib\features\auth\presentation\providers\auth_provider.g.dart:15:16 - undefined_getter
+warning - The declaration '_$AuthNotifier' isn't referenced - lib\features\auth\presentation\providers\auth_provider.g.dart:23:9 - unused_element
+  error - Undefined class 'AutoDisposeNotifier' - lib\features\auth\presentation\providers\auth_provider.g.dart:23:26 - undefined_class
+  error - The name 'AsyncValue' isn't a type, so it can't be used as a type argument - lib\features\auth\presentation\providers\auth_provider.g.dart:23:46 - non_type_as_type_argument
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\auth\presentation\screens\profile_screen.dart:82:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\auth\presentation\screens\profile_screen.dart:85:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\auth\presentation\screens\profile_screen.dart:132:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:86:77 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:99:94 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:120:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:138:81 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\dashboard\presentation\screens\dashboard_screen.dart:191:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:210:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:264:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:266:20 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:389:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:391:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\dashboard\presentation\screens\dashboard_screen.dart:433:51 - deprecated_member_use
+  error - Undefined name 'ProviderFor' used as an annotation - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:12:1 - undefined_annotation
+  error - Undefined name 'NasihaChat' - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:12:14 - undefined_identifier
+  error - The name 'AutoDisposeNotifierProvider' isn't a class - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:14:5 - creation_with_non_type
+  error - The name 'NasihaChat' isn't a type, so it can't be used as a type argument - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:14:33 - non_type_as_type_argument
+  error - The name 'ChatMessage' isn't a type, so it can't be used as a type argument - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:14:50 - non_type_as_type_argument
+  error - Undefined name 'NasihaChat' - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:15:3 - undefined_identifier
+  error - The getter 'new' isn't defined for the type 'InvalidType' - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:15:14 - undefined_getter
+warning - The declaration '_$NasihaChat' isn't referenced - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:23:9 - unused_element
+  error - Undefined class 'AutoDisposeNotifier' - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:23:24 - undefined_class
+  error - The name 'ChatMessage' isn't a type, so it can't be used as a type argument - lib\features\islamic\presentation\providers\nasiha_provider.g.dart:23:49 - non_type_as_type_argument
+  error - Undefined name 'ProviderFor' used as an annotation - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:12:1 - undefined_annotation
+  error - Undefined name 'SunnahDiet' - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:12:14 - undefined_identifier
+  error - The name 'AutoDisposeAsyncNotifierProvider' isn't a class - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:14:5 - creation_with_non_type
+  error - The name 'SunnahDiet' isn't a type, so it can't be used as a type argument - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:14:38 - non_type_as_type_argument
+  error - Undefined name 'SunnahDiet' - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:15:3 - undefined_identifier
+  error - The getter 'new' isn't defined for the type 'InvalidType' - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:15:14 - undefined_getter
+warning - The declaration '_$SunnahDiet' isn't referenced - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:23:9 - unused_element
+  error - Undefined class 'AutoDisposeAsyncNotifier' - lib\features\islamic\presentation\providers\sunnah_diet_provider.g.dart:23:24 - undefined_class
+warning - Unused import: '../../../../core/theme/app_theme.dart' - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:5:8 - unused_import
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:119:65 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:120:73 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:157:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:165:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:187:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:209:64 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\dhikr_counter_screen.dart:220:56 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\dhikr_list_screen.dart:128:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:69:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:101:71 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:102:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:102:87 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:128:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:141:22 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:143:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\fasting_tracker_screen.dart:241:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:212:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:224:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:233:39 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:247:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:256:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:308:28 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:309:31 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:315:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:315:77 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:319:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:331:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen.dart:334:67 - deprecated_member_use
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\features\islamic\presentation\screens\islamic_screen_redesign.dart:45:35 - prefer_const_literals_to_create_immutables
+   info - Use 'const' literals as arguments to constructors of '@immutable' classes - lib\features\islamic\presentation\screens\islamic_screen_redesign.dart:53:35 - prefer_const_literals_to_create_immutables
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\islamic_screen_redesign.dart:96:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\mood_wellness_screen.dart:82:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\mood_wellness_screen.dart:85:55 - deprecated_member_use
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\features\islamic\presentation\screens\nasiha_screen.dart:5:8 - unnecessary_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:55:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:106:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:172:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:178:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:189:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:210:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\nasiha_screen.dart:250:50 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\prayer_times_screen.dart:24:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\prayer_times_screen.dart:95:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\prayer_times_screen.dart:102:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:85:65 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:150:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:150:85 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:154:71 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:165:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:210:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:210:79 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:214:65 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:225:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:225:102 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:234:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\quranic_wisdom_screen.dart:253:52 - deprecated_member_use
+warning - The value of the local variable 'theme' isn't used - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:11:11 - unused_local_variable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:196:45 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:197:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:197:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\screens\sunnah_nutrition_screen.dart:199:76 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\prayer_card.dart:34:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\prayer_card.dart:50:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\prayer_card.dart:51:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\prayer_card.dart:75:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:51:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:56:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:74:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:83:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:86:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:109:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\islamic\presentation\widgets\premium_feature_card.dart:120:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\onboarding_screen.dart:95:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\onboarding_screen.dart:114:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\onboarding_screen.dart:138:64 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\splash_screen.dart:71:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\splash_screen.dart:81:54 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\onboarding\presentation\screens\splash_screen.dart:138:60 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:77:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:256:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:258:65 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\risk_prediction\presentation\screens\health_profile_form_screen.dart:462:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\risk_prediction\presentation\screens\report_screen.dart:130:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\risk_prediction\presentation\screens\report_screen.dart:148:41 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:122:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:123:71 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:145:95 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:154:97 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:169:96 - deprecated_member_use
+   info - 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:210:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:261:25 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\breathing_exercise_screen.dart:275:31 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\craving_log_screen.dart:136:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\craving_screen.dart:99:38 - deprecated_member_use
+warning - Unused import: 'package:qalb/features/smoking/domain/entities/health_milestone.dart' - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:5:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:107:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:133:131 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:178:102 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:273:22 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:275:41 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:333:81 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:344:83 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\smoking_dashboard_screen.dart:382:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:131:41 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:134:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:145:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:148:55 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:197:32 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:197:47 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:245:65 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\features\smoking\presentation\screens\smoking_setup_screen.dart:245:80 - deprecated_member_use
+  error - Undefined name 'ProviderFor' used as an annotation - lib\shared\services\connectivity_service.g.dart:13:1 - undefined_annotation
+  error - Undefined name 'connectivityStream' - lib\shared\services\connectivity_service.g.dart:13:14 - undefined_identifier
+  error - The name 'AutoDisposeStreamProvider' isn't a class - lib\shared\services\connectivity_service.g.dart:14:36 - creation_with_non_type
+  error - Undefined name 'connectivityStream' - lib\shared\services\connectivity_service.g.dart:15:3 - undefined_identifier
+  error - Undefined class 'AutoDisposeStreamProviderRef' - lib\shared\services\connectivity_service.g.dart:26:33 - undefined_class
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:28:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:59:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\shared\services\notification_service.dart:91:7 - avoid_print
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\shared\widgets\app_text_field.dart:65:42 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\shared\widgets\app_text_field.dart:65:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\shared\widgets\empty_state.dart:32:50 - deprecated_member_use
+   info - 'surfaceVariant' is deprecated and shouldn't be used. Use surfaceContainerHighest instead. This feature was deprecated after v3.18.0-0.1.pre - lib\shared\widgets\risk_gauge.dart:37:54 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\shared\widgets\risk_gauge.dart:37:69 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\shared\widgets\risk_gauge.dart:130:30 - deprecated_member_use
+

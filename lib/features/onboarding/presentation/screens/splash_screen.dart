@@ -68,7 +68,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
             end: Alignment.bottomCenter,
             colors: [
               theme.colorScheme.primary,
-              theme.colorScheme.primary.withOpacity(0.8),
+              theme.colorScheme.primary.withValues(alpha: 0.8),
             ],
           ),
         ),
@@ -78,7 +78,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
             Positioned.fill(
               child: CustomPaint(
                 painter: IslamicPatternPainter(
-                  color: theme.colorScheme.onPrimary.withOpacity(0.08),
+                  color: theme.colorScheme.onPrimary.withValues(alpha: 0.08),
                 ),
               ),
             ),
@@ -135,7 +135,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     child: Text(
                       'আপনার হৃদয়ের যত্ন নিন',
                       style: theme.textTheme.bodyLarge?.copyWith(
-                        color: theme.colorScheme.onPrimary.withOpacity(0.9),
+                        color: theme.colorScheme.onPrimary.withValues(alpha: 0.9),
                         fontFamily: 'Noto Naskh Arabic',
                       ),
                     ),

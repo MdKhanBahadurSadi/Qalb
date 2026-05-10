@@ -62,7 +62,7 @@ class AppTextField extends StatelessWidget {
                 : null,
             suffixIcon: suffixIcon,
             filled: true,
-            fillColor: theme.colorScheme.surfaceVariant.withOpacity(0.3),
+            fillColor: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(AppTheme.kRadiusMd),
               borderSide: BorderSide.none,

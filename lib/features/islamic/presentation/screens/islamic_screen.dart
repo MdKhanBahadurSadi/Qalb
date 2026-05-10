@@ -209,7 +209,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                 height: 200,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.05),
+                  color: Colors.white.withValues(alpha: 0.05),
                 ),
               ),
             ),
@@ -221,7 +221,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                 height: 140,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(0.05),
+                  color: Colors.white.withValues(alpha: 0.05),
                 ),
               ),
             ),
@@ -230,7 +230,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                 child: Container(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                 ),
               ),
             ),
@@ -244,7 +244,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                   Text(
                     'আসসালামু আলাইকুম',
                     style: GoogleFonts.hindSiliguri(
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
@@ -253,7 +253,7 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
                   Text(
                     'আপনার দিনটি বরকতময় হোক',
                     style: GoogleFonts.hindSiliguri(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Colors.white.withValues(alpha: 0.7),
                       fontSize: 14,
                     ),
                   ),
@@ -305,18 +305,18 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
       child: InkWell(
         onTap: () => context.push(route),
         borderRadius: BorderRadius.circular(24),
-        splashColor: color.withOpacity(0.1),
-        highlightColor: color.withOpacity(0.05),
+        splashColor: color.withValues(alpha: 0.1),
+        highlightColor: color.withValues(alpha: 0.05),
         child: Container(
           decoration: BoxDecoration(
             color: surfaceColor,
             borderRadius: BorderRadius.circular(24),
             border: Border.all(
-              color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.05),
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
             ),
             boxShadow: [
               BoxShadow(
-                color: isDark ? Colors.black26 : Colors.black.withOpacity(0.03),
+                color: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.03),
                 blurRadius: 15,
                 offset: const Offset(0, 5),
               ),
@@ -328,10 +328,10 @@ class _IslamicScreenState extends State<IslamicScreen> with SingleTickerProvider
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(isDark ? 0.2 : 0.1),
+                  color: color.withValues(alpha: isDark ? 0.2 : 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(icon, size: 32, color: isDark ? color.withOpacity(0.9) : color),
+                child: Icon(icon, size: 32, color: isDark ? color.withValues(alpha: 0.9) : color),
               ),
               const SizedBox(height: 16),
               Text(

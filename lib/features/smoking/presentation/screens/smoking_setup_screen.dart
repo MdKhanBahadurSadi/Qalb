@@ -128,10 +128,10 @@ class _SmokingSetupScreenState extends ConsumerState<SmokingSetupScreen> {
               ),
               const SizedBox(height: 12),
               ListTile(
-                tileColor: Colors.green.withOpacity(0.1),
+                tileColor: Colors.green.withValues(alpha: 0.1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Colors.green.withOpacity(0.2)),
+                  side: BorderSide(color: Colors.green.withValues(alpha: 0.2)),
                 ),
                 leading: const Icon(Icons.bolt, color: Colors.green),
                 title: const Text('আজই ছাড়তে চাই'),
@@ -142,10 +142,10 @@ class _SmokingSetupScreenState extends ConsumerState<SmokingSetupScreen> {
               ),
               const SizedBox(height: 12),
               ListTile(
-                tileColor: Colors.blue.withOpacity(0.1),
+                tileColor: Colors.blue.withValues(alpha: 0.1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Colors.blue.withOpacity(0.2)),
+                  side: BorderSide(color: Colors.blue.withValues(alpha: 0.2)),
                 ),
                 leading: const Icon(Icons.calendar_today, color: Colors.blue),
                 title: Text(_selectedQuitDate == null
@@ -194,7 +194,7 @@ class _SmokingSetupScreenState extends ConsumerState<SmokingSetupScreen> {
   Widget _buildInputCard(ThemeData theme, String question, {required TextEditingController controller, required String suffix}) {
     return Card(
       elevation: 0,
-      color: theme.colorScheme.surfaceVariant.withOpacity(0.3),
+      color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -242,7 +242,7 @@ class _ChoiceButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
-          color: isSelected ? colorScheme.primary : colorScheme.surfaceVariant.withOpacity(0.3),
+          color: isSelected ? colorScheme.primary : colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: isSelected ? colorScheme.primary : Colors.transparent),
         ),

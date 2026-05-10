@@ -31,7 +31,7 @@ class PrayerCard extends StatelessWidget {
         boxShadow: [
           if (isSpecial)
             BoxShadow(
-              color: colorScheme.primary.withOpacity(0.3),
+              color: colorScheme.primary.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -47,8 +47,8 @@ class PrayerCard extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: isSpecial 
-                  ? colorScheme.onPrimary.withOpacity(0.2) 
-                  : colorScheme.primary.withOpacity(0.1),
+                  ? colorScheme.onPrimary.withValues(alpha: 0.2) 
+                  : colorScheme.primary.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Text(
@@ -72,7 +72,7 @@ class PrayerCard extends StatelessWidget {
                   prayer.arabicName,
                   style: theme.textTheme.labelSmall?.copyWith(
                     color: isSpecial 
-                        ? colorScheme.onPrimary.withOpacity(0.7) 
+                        ? colorScheme.onPrimary.withValues(alpha: 0.7) 
                         : colorScheme.onSurfaceVariant,
                     fontFamily: 'serif',
                   ),
