@@ -36,6 +36,9 @@ void main() async {
     // Notifications
     await NotificationService.initialize();
 
+    debugPrint('🚀 Starting App with Gemini Key: ${AppConstants.geminiApiKey.substring(0, 5)}***');
+    debugPrint('🚀 Using Model: ${AppConstants.geminiModel}');
+
     // Portrait only
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

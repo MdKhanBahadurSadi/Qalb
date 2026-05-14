@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class QuranicWisdom extends AutoDisposeAsyncNotifier<String?> {
   late GenerativeModel _model;
 
   @override
   FutureOr<String?> build() {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
-      model: 'gemini-2.5-flash',
-      apiKey: apiKey,
+      model: AppConstants.geminiModel,
+      apiKey: AppConstants.geminiApiKey,
       systemInstruction: Content.system('''
 আপনি Qalb অ্যাপের একজন "Quranic Heart Wisdom AI"। 
 আপনার কাজ হলো কুরআনুল কারীমের বিভিন্ন আয়াতের আলোকে হৃদয় (কলব), প্রশান্তি, ধৈর্য, শুকরিয়া এবং আধ্যাত্মিক সুস্থতা নিয়ে আলোচনা করা।

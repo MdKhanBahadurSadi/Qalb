@@ -130,6 +130,13 @@ class HealthProfileFormNotifier extends StateNotifier<HealthProfileFormState> {
       state = state.copyWith(currentStep: state.currentStep - 1);
     }
   }
+
+  /// Jump directly to a specific step (used by OCR auto-fill)
+  void goToStep(int step) {
+    if (step >= 0 && step <= 2) {
+      state = state.copyWith(currentStep: step);
+    }
+  }
 }
 
 final healthProfileFormProvider =

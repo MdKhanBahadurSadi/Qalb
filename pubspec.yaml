@@ -64,6 +64,9 @@ dependencies:
   vibration: ^2.0.1
   just_audio: ^0.9.36
 
+  # OCR Layer
+  google_mlkit_text_recognition: ^0.13.1
+
   # PDF
   pdf: ^3.10.8
   printing: ^5.12.0

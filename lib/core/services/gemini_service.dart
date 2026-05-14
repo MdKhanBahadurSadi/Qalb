@@ -1,14 +1,14 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'dart:developer' as dev;
+import '../constants/app_constants.dart';
 
 class GeminiService {
   late GenerativeModel _model;
   
   GeminiService() {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
-      model: 'gemini-1.5-flash',
-      apiKey: apiKey,
+      model: AppConstants.geminiModel,
+      apiKey: AppConstants.geminiApiKey,
     );
   }
 

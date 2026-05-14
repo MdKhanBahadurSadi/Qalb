@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class SunnahDiet extends AutoDisposeAsyncNotifier<String?> {
   late GenerativeModel _model;
 
   @override
   FutureOr<String?> build() {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
-      model: 'gemini-2.5-flash',
-      apiKey: apiKey,
+      model: AppConstants.geminiModel,
+      apiKey: AppConstants.geminiApiKey,
       systemInstruction: Content.system('''
 আপনি Qalb অ্যাপের একজন AI Sunnah Diet Planner।
 আপনার কাজ হলো ব্যবহারকারীর স্বাস্থ্যের তথ্যের ওপর ভিত্তি করে একটি নিরাপদ, ব্যবহারিক এবং হার্ট-ফ্রেন্ডলি সুন্নাহ-অনুপ্রাণিত খাবার তালিকা তৈরি করা।

@@ -67,11 +67,6 @@ class ProfileScreen extends ConsumerWidget {
           user?.email ?? 'user@example.com',
           style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
         ),
-        const SizedBox(height: 8),
-        Text(
-          'সদস্য হয়েছেন: ${user != null ? DateFormat('dd MMMM, yyyy', 'bn').format(DateTime.now()) : '---'}',
-          style: theme.textTheme.labelSmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
-        ),
       ],
     );
   }

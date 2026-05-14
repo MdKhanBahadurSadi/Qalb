@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class MoodWellness extends AutoDisposeAsyncNotifier<String?> {
   late GenerativeModel _model;
 
   @override
   FutureOr<String?> build() {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
-      model: 'gemini-2.5-flash',
-      apiKey: apiKey,
+      model: AppConstants.geminiModel,
+      apiKey: AppConstants.geminiApiKey,
       systemInstruction: Content.system('''
 আপনি Qalb অ্যাপের একজন ইসলামিক ইমোショナル ওয়েলনেস অ্যাসিস্ট্যান্ট (Islamic emotional wellness assistant)।
 আপনার কাজ হলো ব্যবহারকারীর মানসিক অবস্থার ওপর ভিত্তি করে তাকে শান্ত করা এবং আধ্যাত্মিক দিকনির্দেশনা দেওয়া।

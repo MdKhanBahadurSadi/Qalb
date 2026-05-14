@@ -16,3 +16,11 @@
 
 # Play Core (Missing classes for Flutter deferred components)
 -dontwarn com.google.android.play.core.**
+
+# ML Kit Text Recognition Proguard Rules
+-keep class com.google.mlkit.vision.text.** { *; }
+-dontwarn com.google.mlkit.vision.text.**
+-dontwarn com.google.mlkit.vision.text.chinese.**
+-dontwarn com.google.mlkit.vision.text.devanagari.**
+-dontwarn com.google.mlkit.vision.text.japanese.**
+-dontwarn com.google.mlkit.vision.text.korean.**

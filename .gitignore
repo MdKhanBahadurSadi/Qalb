@@ -46,6 +46,7 @@ app.*.map.json
 
 # Sensitive information
 .env*
+lib/core/constants/secrets.dart
 android/local.properties
 android/key.jks
 android/app/google-services.json

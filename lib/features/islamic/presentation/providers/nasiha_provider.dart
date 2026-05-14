@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class ChatMessage {
   final String text;
@@ -18,10 +19,9 @@ class NasihaChat extends StateNotifier<List<ChatMessage>> {
   }
 
   void _initializeChat() {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY');
     _model = GenerativeModel(
-      model: 'gemini-2.5-flash',
-      apiKey: apiKey,
+      model: AppConstants.geminiModel,
+      apiKey: AppConstants.geminiApiKey,
       systemInstruction: Content.system('''
 আপনি "An-Nasiha" (আন-নাসিহা), Qalb অ্যাপের একজন ইসলামিক ওয়েলনেস এবং হার্ট হেলথ অ্যাসিস্ট্যান্ট। 
 

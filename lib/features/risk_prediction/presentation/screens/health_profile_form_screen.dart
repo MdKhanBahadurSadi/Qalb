@@ -4,15 +4,86 @@ import 'package:go_router/go_router.dart';
 import '../../../../shared/widgets/primary_button.dart';
 import '../providers/health_profile_form_provider.dart';
 import '../providers/risk_prediction_provider.dart';
+import '../widgets/ocr_scan_button.dart';
+import '../../data/services/ocr_service.dart';
 
-class HealthProfileFormScreen extends ConsumerWidget {
+class HealthProfileFormScreen extends ConsumerStatefulWidget {
   const HealthProfileFormScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HealthProfileFormScreen> createState() => _HealthProfileFormScreenState();
+}
+
+class _HealthProfileFormScreenState extends ConsumerState<HealthProfileFormScreen> {
+  late TextEditingController _ageController;
+  late TextEditingController _heightFeetController;
+  late TextEditingController _heightInchesController;
+  late TextEditingController _weightController;
+  late TextEditingController _systolicBPController;
+  late TextEditingController _diastolicBPController;
+  late TextEditingController _cholesterolController;
+  late TextEditingController _heartRateController;
+
+  @override
+  void initState() {
+    super.initState();
+    final initialState = ref.read(healthProfileFormProvider);
+    _ageController = TextEditingController(text: initialState.age.toString());
+    _heightFeetController = TextEditingController(text: initialState.heightFeet.toString());
+    _heightInchesController = TextEditingController(text: initialState.heightInches.toString());
+    _weightController = TextEditingController(text: initialState.weight.toString());
+    _systolicBPController = TextEditingController(text: initialState.systolicBP.toString());
+    _diastolicBPController = TextEditingController(text: initialState.diastolicBP.toString());
+    _cholesterolController = TextEditingController(text: initialState.cholesterol.toString());
+    _heartRateController = TextEditingController(text: initialState.heartRate.toString());
+  }
+
+  @override
+  void dispose() {
+    _ageController.dispose();
+    _heightFeetController.dispose();
+    _heightInchesController.dispose();
+    _weightController.dispose();
+    _systolicBPController.dispose();
+    _diastolicBPController.dispose();
+    _cholesterolController.dispose();
+    _heartRateController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final formState = ref.watch(healthProfileFormProvider);
     final notifier = ref.read(healthProfileFormProvider.notifier);
     final theme = Theme.of(context);
+
+    // Listen to state changes to update controllers (e.g. after OCR scan)
+    ref.listen(healthProfileFormProvider, (previous, next) {
+      if (int.tryParse(_ageController.text) != next.age) {
+        _ageController.text = next.age.toString();
+      }
+      if (int.tryParse(_heightFeetController.text) != next.heightFeet) {
+        _heightFeetController.text = next.heightFeet.toString();
+      }
+      if (int.tryParse(_heightInchesController.text) != next.heightInches) {
+        _heightInchesController.text = next.heightInches.toString();
+      }
+      if (double.tryParse(_weightController.text) != next.weight) {
+        _weightController.text = next.weight.toString();
+      }
+      if (int.tryParse(_systolicBPController.text) != next.systolicBP) {
+        _systolicBPController.text = next.systolicBP.toString();
+      }
+      if (int.tryParse(_diastolicBPController.text) != next.diastolicBP) {
+        _diastolicBPController.text = next.diastolicBP.toString();
+      }
+      if (int.tryParse(_cholesterolController.text) != next.cholesterol) {
+        _cholesterolController.text = next.cholesterol.toString();
+      }
+      if (int.tryParse(_heartRateController.text) != next.heartRate) {
+        _heartRateController.text = next.heartRate.toString();
+      }
+    });
 
     return PopScope(
       canPop: false,
@@ -77,7 +148,35 @@ class HealthProfileFormScreen extends ConsumerWidget {
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: _buildStepContent(context, theme, formState, notifier),
+              child: Column(
+                children: [
+                  // OCR Scan Button — always visible at the top
+                  OcrScanButton(
+                    onResultParsed: (OcrParsedResult result) {
+                      // Auto-fill all extracted fields
+                      notifier.updateField(
+                        age: result.age,
+                        weight: result.weight,
+                        systolicBP: result.systolicBP,
+                        diastolicBP: result.diastolicBP,
+                        cholesterol: result.cholesterol,
+                        heartRate: result.heartRate,
+                        diabetes: result.hasDiabetes ? true : null,
+                        smoking: result.hasSmoking ? true : null,
+                        familyHistory: result.hasFamilyHistory ? true : null,
+                      );
+                      // If clinical data found, jump to step 2
+                      if (result.systolicBP != null ||
+                          result.cholesterol != null ||
+                          result.heartRate != null) {
+                        notifier.goToStep(1);
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  _buildStepContent(context, theme, formState, notifier),
+                ],
+              ),
             ),
           ),
 
@@ -127,9 +226,25 @@ class HealthProfileFormScreen extends ConsumerWidget {
       HealthProfileFormNotifier notifier) {
     switch (state.currentStep) {
       case 0:
-        return _Step1BasicInfo(theme: theme, state: state, notifier: notifier);
+        return _Step1BasicInfo(
+          theme: theme,
+          state: state,
+          notifier: notifier,
+          ageController: _ageController,
+          heightFeetController: _heightFeetController,
+          heightInchesController: _heightInchesController,
+          weightController: _weightController,
+        );
       case 1:
-        return _Step2ClinicalInfo(theme: theme, state: state, notifier: notifier);
+        return _Step2ClinicalInfo(
+          theme: theme,
+          state: state,
+          notifier: notifier,
+          systolicBPController: _systolicBPController,
+          diastolicBPController: _diastolicBPController,
+          cholesterolController: _cholesterolController,
+          heartRateController: _heartRateController,
+        );
       case 2:
         return _Step3History(theme: theme, state: state, notifier: notifier);
       default:
@@ -142,8 +257,20 @@ class _Step1BasicInfo extends StatelessWidget {
   final ThemeData theme;
   final HealthProfileFormState state;
   final HealthProfileFormNotifier notifier;
+  final TextEditingController ageController;
+  final TextEditingController heightFeetController;
+  final TextEditingController heightInchesController;
+  final TextEditingController weightController;
 
-  const _Step1BasicInfo({required this.theme, required this.state, required this.notifier});
+  const _Step1BasicInfo({
+    required this.theme,
+    required this.state,
+    required this.notifier,
+    required this.ageController,
+    required this.heightFeetController,
+    required this.heightInchesController,
+    required this.weightController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -154,6 +281,7 @@ class _Step1BasicInfo extends StatelessWidget {
         const SizedBox(height: 24),
         _buildLabel(theme, 'বয়স'),
         TextField(
+          controller: ageController,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             hintText: 'আপনার বয়স লিখুন',
@@ -189,6 +317,7 @@ class _Step1BasicInfo extends StatelessWidget {
           children: [
             Expanded(
               child: TextField(
+                controller: heightFeetController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'ফুট',
@@ -200,6 +329,7 @@ class _Step1BasicInfo extends StatelessWidget {
             const SizedBox(width: 16),
             Expanded(
               child: TextField(
+                controller: heightInchesController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'ইঞ্চি',
@@ -213,6 +343,7 @@ class _Step1BasicInfo extends StatelessWidget {
         const SizedBox(height: 20),
         _buildLabel(theme, 'ওজন (kg)'),
         TextField(
+          controller: weightController,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
@@ -251,8 +382,20 @@ class _Step2ClinicalInfo extends StatelessWidget {
   final ThemeData theme;
   final HealthProfileFormState state;
   final HealthProfileFormNotifier notifier;
+  final TextEditingController systolicBPController;
+  final TextEditingController diastolicBPController;
+  final TextEditingController cholesterolController;
+  final TextEditingController heartRateController;
 
-  const _Step2ClinicalInfo({required this.theme, required this.state, required this.notifier});
+  const _Step2ClinicalInfo({
+    required this.theme,
+    required this.state,
+    required this.notifier,
+    required this.systolicBPController,
+    required this.diastolicBPController,
+    required this.cholesterolController,
+    required this.heartRateController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -263,15 +406,39 @@ class _Step2ClinicalInfo extends StatelessWidget {
         const SizedBox(height: 24),
         Row(
           children: [
-            Expanded(child: _buildNumberField(theme, 'সিস্টোলিক BP', (v) => notifier.updateField(systolicBP: int.tryParse(v)))),
+            Expanded(
+              child: _buildNumberField(
+                theme,
+                'সিস্টোলিক BP',
+                systolicBPController,
+                (v) => notifier.updateField(systolicBP: int.tryParse(v)),
+              ),
+            ),
             const SizedBox(width: 16),
-            Expanded(child: _buildNumberField(theme, 'ডায়াস্টোলিক BP', (v) => notifier.updateField(diastolicBP: int.tryParse(v)))),
+            Expanded(
+              child: _buildNumberField(
+                theme,
+                'ডায়াস্টোলিক BP',
+                diastolicBPController,
+                (v) => notifier.updateField(diastolicBP: int.tryParse(v)),
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 20),
-        _buildNumberField(theme, 'কোলেস্টেরল (mg/dL)', (v) => notifier.updateField(cholesterol: int.tryParse(v))),
+        _buildNumberField(
+          theme,
+          'কোলেস্টেরল (mg/dL)',
+          cholesterolController,
+          (v) => notifier.updateField(cholesterol: int.tryParse(v)),
+        ),
         const SizedBox(height: 20),
-        _buildNumberField(theme, 'হার্ট রেট (bpm)', (v) => notifier.updateField(heartRate: int.tryParse(v))),
+        _buildNumberField(
+          theme,
+          'হার্ট রেট (bpm)',
+          heartRateController,
+          (v) => notifier.updateField(heartRate: int.tryParse(v)),
+        ),
       ],
     );
   }
@@ -307,12 +474,13 @@ Widget _buildLabel(ThemeData theme, String text) {
   );
 }
 
-Widget _buildNumberField(ThemeData theme, String label, Function(String) onChanged) {
+Widget _buildNumberField(ThemeData theme, String label, TextEditingController controller, Function(String) onChanged) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       _buildLabel(theme, label),
       TextField(
+        controller: controller,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
