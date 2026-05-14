@@ -35,8 +35,6 @@ class LanguageSelector extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
           _buildLanguageTile(context, theme, ref, 'বাংলা', 'bn', currentLocale),
-          _buildLanguageTile(context, theme, ref, 'English', 'en', currentLocale),
-          _buildLanguageTile(context, theme, ref, 'العربية', 'ar', currentLocale),
           const SizedBox(height: 20),
         ],
       ),

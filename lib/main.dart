@@ -43,7 +43,7 @@ void main() async {
 
     runApp(
       EasyLocalization(
-        supportedLocales: const [Locale('bn'), Locale('en'), Locale('ar')],
+        supportedLocales: const [Locale('bn')],
         path: 'assets/translations',
         fallbackLocale: const Locale('bn'),
         child: const ProviderScope(child: QalbApp()),
