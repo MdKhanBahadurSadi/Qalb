@@ -19,13 +19,22 @@ class PdfReportService {
   }) async {
     final pdf = pw.Document();
 
-    // Load fonts for Bangla support if needed, but for now using standard
-    // Note: Standard PDF fonts don't support Bangla. For a professional app, 
-    // we would bundle a Bangla font like 'Hind Siliguri'.
+    // Bangla এবং Unicode সাপোর্ট করার জন্য গুগল ফন্ট লোড করা
+    final banglaFont = await PdfGoogleFonts.hindSiliguriMedium();
+    final banglaFontBold = await PdfGoogleFonts.hindSiliguriBold();
+    
+    // আরবিক সাপোর্ট করার জন্য ফন্ট (ঐচ্ছিক, যদি প্রয়োজন হয়)
+    final arabicFont = await PdfGoogleFonts.notoNaskhArabicRegular();
+
+    final theme = pw.ThemeData.withFont(
+      base: banglaFont,
+      bold: banglaFontBold,
+    );
 
     // Page 1: Cover
     pdf.addPage(
       pw.Page(
+        theme: theme,
         build: (context) => pw.Container(
           padding: const pw.EdgeInsets.all(40),
           decoration: pw.BoxDecoration(
@@ -53,6 +62,7 @@ class PdfReportService {
     // Page 2: Risk Assessment
     pdf.addPage(
       pw.Page(
+        theme: theme,
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
@@ -106,6 +116,7 @@ class PdfReportService {
     // Page 3: Recommendations
     pdf.addPage(
       pw.Page(
+        theme: theme,
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
@@ -142,6 +153,7 @@ class PdfReportService {
     // Page 4: Health Trends
     pdf.addPage(
       pw.Page(
+        theme: theme,
         build: (context) => pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [

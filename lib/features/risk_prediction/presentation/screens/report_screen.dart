@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:intl/intl.dart';
 import 'package:qalb/shared/services/pdf_report_service.dart';
 import 'package:qalb/features/auth/presentation/providers/auth_provider.dart';
+import '../providers/health_history_provider.dart';
+import '../../domain/entities/risk_result.dart';
 
 class ReportScreen extends ConsumerStatefulWidget {
   const ReportScreen({super.key});
@@ -12,58 +15,85 @@ class ReportScreen extends ConsumerStatefulWidget {
 }
 
 class _ReportScreenState extends ConsumerState<ReportScreen> {
-  String _selectedRange = 'শেষ ৩০ দিন';
+  String _selectedRange = 'সব';
 
   @override
   Widget build(BuildContext context) {
     final user = ref.watch(authStateProvider).value;
+    final historyAsync = ref.watch(healthHistoryProvider);
     final theme = Theme.of(context);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('স্বাস্থ্য রিপোর্ট'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.picture_as_pdf),
-            onPressed: () => _exportPdf(user?.name ?? 'ব্যবহারকারী'),
+    return historyAsync.when(
+      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      error: (err, stack) => Scaffold(body: Center(child: Text('Error: $err'))),
+      data: (history) {
+        if (history.isEmpty) {
+          return Scaffold(
+            appBar: AppBar(title: const Text('স্বাস্থ্য রিপোর্ট')),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.history, size: 64, color: theme.colorScheme.outline),
+                  const SizedBox(height: 16),
+                  const Text('এখনো কোনো হিস্ট্রি নেই।'),
+                  const SizedBox(height: 8),
+                  const Text('আগে আপনার রিস্ক ক্যালকুলেট করুন।'),
+                ],
+              ),
+            ),
+          );
+        }
+
+        final latestResult = history.first;
+
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('স্বাস্থ্য রিপোর্ট'),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.picture_as_pdf),
+                onPressed: () => _exportPdf(user?.name ?? 'ব্যবহারকারী', latestResult, history),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildRangeSelector(theme),
-            const SizedBox(height: 24),
-            Text(
-              'রিস্ক স্কোর হিস্ট্রি', 
-              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildRangeSelector(theme),
+                const SizedBox(height: 24),
+                Text(
+                  'রিস্ক স্কোর হিস্ট্রি', 
+                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                _buildHistoryChart(theme, history),
+                const SizedBox(height: 24),
+                _buildSummaryCard(theme, latestResult, history),
+                const SizedBox(height: 24),
+                Text(
+                  'রিস্ক ফ্যাক্টর ব্রেকডাউন', 
+                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                _buildFactorsChart(theme, latestResult),
+                const SizedBox(height: 24),
+                Text(
+                  'পরামর্শ', 
+                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 12),
+                _buildRecommendations(theme, latestResult),
+                const SizedBox(height: 40),
+                _buildIslamicReminder(theme),
+                const SizedBox(height: 20),
+              ],
             ),
-            const SizedBox(height: 16),
-            _buildHistoryChart(theme),
-            const SizedBox(height: 24),
-            _buildSummaryCard(theme),
-            const SizedBox(height: 24),
-            Text(
-              'রিস্ক ফ্যাক্টর ব্রেকডাউন', 
-              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            _buildFactorsChart(theme),
-            const SizedBox(height: 24),
-            Text(
-              'পরামর্শ', 
-              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 12),
-            _buildRecommendations(theme),
-            const SizedBox(height: 40),
-            _buildIslamicReminder(theme),
-            const SizedBox(height: 20),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -90,10 +120,15 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
     );
   }
 
-  Widget _buildHistoryChart(ThemeData theme) {
+  Widget _buildHistoryChart(ThemeData theme, List<RiskResult> history) {
+    final reversedHistory = history.reversed.toList();
+    final spots = reversedHistory.asMap().entries.map((e) {
+      return FlSpot(e.key.toDouble(), e.value.score.toDouble());
+    }).toList();
+
     return Container(
       height: 200,
-      padding: const EdgeInsets.only(right: 16, top: 16),
+      padding: const EdgeInsets.only(right: 16, top: 16, left: 8, bottom: 8),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
@@ -102,29 +137,34 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
       child: LineChart(
         LineChartData(
           gridData: const FlGridData(show: false),
-          titlesData: const FlTitlesData(show: false),
+          titlesData: FlTitlesData(
+            leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            bottomTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: true,
+                getTitlesWidget: (value, meta) {
+                  if (value.toInt() < 0 || value.toInt() >= reversedHistory.length) return const SizedBox();
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                      DateFormat('dd/MM').format(reversedHistory[value.toInt()].calculatedAt),
+                      style: theme.textTheme.labelSmall?.copyWith(fontSize: 9),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
           borderData: FlBorderData(show: false),
           lineBarsData: [
             LineChartBarData(
-              spots: const [
-                FlSpot(0, 20),
-                FlSpot(1, 35),
-                FlSpot(2, 25),
-                FlSpot(3, 40),
-                FlSpot(4, 30),
-              ],
+              spots: spots,
               isCurved: true,
               color: theme.colorScheme.primary,
               barWidth: 4,
-              dotData: FlDotData(
-                show: true,
-                getDotPainter: (spot, percent, barData, index) => FlDotCirclePainter(
-                  radius: 4,
-                  color: theme.colorScheme.primary,
-                  strokeWidth: 2,
-                  strokeColor: theme.colorScheme.surface,
-                ),
-              ),
+              dotData: const FlDotData(show: true),
               belowBarData: BarAreaData(
                 show: true,
                 color: theme.colorScheme.primary.withValues(alpha: 0.1),
@@ -136,7 +176,29 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
     );
   }
 
-  Widget _buildSummaryCard(ThemeData theme) {
+  Widget _buildSummaryCard(ThemeData theme, RiskResult latest, List<RiskResult> history) {
+    String trendText = "আপনার প্রথম অ্যাসেসমেন্ট সম্পন্ন হয়েছে।";
+    IconData trendIcon = Icons.info_outline;
+    Color trendColor = Colors.blue;
+
+    if (history.length > 1) {
+      final previous = history[1];
+      final diff = latest.score - previous.score;
+      if (diff < 0) {
+        trendText = "আপনার রিস্ক স্কোর ${diff.abs()}% কমেছে। সাবাশ!";
+        trendIcon = Icons.trending_down;
+        trendColor = Colors.green;
+      } else if (diff > 0) {
+        trendText = "আপনার রিস্ক স্কোর $diff% বেড়েছে। সতর্ক হোন।";
+        trendIcon = Icons.trending_up;
+        trendColor = Colors.red;
+      } else {
+        trendText = "আপনার রিস্ক স্কোর স্থিতিশীল আছে।";
+        trendIcon = Icons.trending_flat;
+        trendColor = Colors.orange;
+      }
+    }
+
     return Card(
       elevation: 0,
       shape: RoundedRectangleBorder(
@@ -145,91 +207,44 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: Colors.green.withValues(alpha: 0.1),
-          child: const Icon(Icons.check, color: Colors.green),
+          backgroundColor: trendColor.withValues(alpha: 0.1),
+          child: Icon(trendIcon, color: trendColor),
         ),
         title: Text(
-          'সর্বশেষ অ্যাসেসমেন্ট', 
+          'সর্বশেষ অ্যাসেসমেন্ট (${latest.score}%)', 
           style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
-          'আপনার রিস্ক স্কোর ১৫% কমেছে। জীবনযাত্রা নিয়ন্ত্রণে রাখুন।',
+          trendText,
           style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
         ),
       ),
     );
   }
 
-  Widget _buildFactorsChart(ThemeData theme) {
-    return Container(
-      height: 200,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: theme.colorScheme.outlineVariant, width: 0.5),
-      ),
-      child: BarChart(
-        BarChartData(
-          gridData: const FlGridData(show: false),
-          titlesData: FlTitlesData(
-            show: true,
-            bottomTitles: AxisTitles(
-              sideTitles: SideTitles(
-                showTitles: true,
-                getTitlesWidget: (value, meta) {
-                  const labels = ['ধূমপান', 'BMI', 'ব্যায়াম', 'খাদ্য'];
-                  if (value.toInt() >= labels.length) return const SizedBox();
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                      labels[value.toInt()], 
-                      style: theme.textTheme.labelSmall?.copyWith(fontSize: 10),
-                    ),
-                  );
-                },
-              ),
-            ),
-            leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-            topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-            rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-          ),
-          borderData: FlBorderData(show: false),
-          barGroups: [
-            _makeBarGroup(0, 8, Colors.red),
-            _makeBarGroup(1, 5, Colors.orange),
-            _makeBarGroup(2, 3, Colors.green),
-            _makeBarGroup(3, 4, Colors.blue),
-          ],
-        ),
-      ),
-    );
-  }
-
-  BarChartGroupData _makeBarGroup(int x, double y, Color color) {
-    return BarChartGroupData(
-      x: x,
-      barRods: [
-        BarChartRodData(toY: y, color: color, width: 20, borderRadius: BorderRadius.circular(4)),
-      ],
-    );
-  }
-
-  Widget _buildRecommendations(ThemeData theme) {
-    final list = [
-      'প্রতিদিন ৩০ মিনিট হাঁটুন।',
-      'চিনি ও অতিরিক্ত লবণ পরিহার করুন।',
-      'পর্যাপ্ত পরিমাণে পানি পান করুন।',
-      'ধূমপান পুরোপুরি ছেড়ে দিন।',
-    ];
+  Widget _buildFactorsChart(ThemeData theme, RiskResult latest) {
+    final factors = latest.topRiskFactors;
+    if (factors.isEmpty) {
+      return const Center(child: Text('কোনো বড় রিস্ক ফ্যাক্টর পাওয়া যায়নি।'));
+    }
 
     return Column(
-      children: list.map((rec) => ListTile(
-        leading: const Icon(Icons.lightbulb_outline, color: Colors.orange),
-        title: Text(
-          rec, 
-          style: theme.textTheme.bodyMedium,
+      children: factors.map((f) => Card(
+        margin: const EdgeInsets.only(bottom: 8),
+        child: ListTile(
+          leading: const Icon(Icons.warning_amber_rounded, color: Colors.orange),
+          title: Text(f),
+          trailing: const Text('উচ্চ', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
         ),
+      )).toList(),
+    );
+  }
+
+  Widget _buildRecommendations(ThemeData theme, RiskResult latest) {
+    return Column(
+      children: latest.recommendations.map((rec) => ListTile(
+        leading: const Icon(Icons.lightbulb_outline, color: Colors.orange),
+        title: Text(rec),
         dense: true,
       )).toList(),
     );
@@ -247,6 +262,7 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
               fontFamily: 'Noto Naskh Arabic',
             ),
           ),
+          const SizedBox(height: 4),
           Text(
             '— স্বাস্থ্য আল্লাহর নিয়ামত', 
             style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
@@ -256,7 +272,7 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
     );
   }
 
-  void _exportPdf(String name) async {
+  void _exportPdf(String name, RiskResult latest, List<RiskResult> history) async {
     showDialog(
       context: context, 
       barrierDismissible: false,
@@ -266,25 +282,18 @@ class _ReportScreenState extends ConsumerState<ReportScreen> {
     try {
       await PdfReportService.generateAndShowReport(
         userName: name,
-        riskScore: 25.5,
-        riskCategory: 'Low Risk',
-        riskFactors: [
-          {'factor': 'Smoking', 'status': 'Former'},
-          {'factor': 'BMI', 'status': '24.5 (Normal)'},
-          {'factor': 'Exercise', 'status': 'Regular'},
-        ],
-        recommendations: [
-          'Walk 30 mins daily.',
-          'Avoid sugar and excess salt.',
-          'Maintain current healthy habits.'
-        ],
-        history: [
-          {'date': '2024-04-20', 'score': 30, 'category': 'Moderate'},
-          {'date': '2024-05-08', 'score': 25.5, 'category': 'Low Risk'},
-        ],
+        riskScore: latest.score.toDouble(),
+        riskCategory: latest.category.name.toUpperCase(),
+        riskFactors: latest.topRiskFactors.map((f) => {'factor': f, 'status': 'High'}).toList(),
+        recommendations: latest.recommendations,
+        history: history.map((h) => {
+          'date': DateFormat('yyyy-MM-dd').format(h.calculatedAt),
+          'score': h.score,
+          'category': h.category.name,
+        }).toList(),
       );
     } finally {
-      if (mounted) Navigator.pop(context); // Close loading
+      if (mounted) Navigator.pop(context);
     }
   }
 }

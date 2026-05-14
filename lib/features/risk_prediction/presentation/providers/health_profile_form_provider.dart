@@ -32,7 +32,8 @@ class HealthProfileFormState {
   });
 
   double get heightInCm {
-    return (heightFeet * 30.48) + (heightInInches * 2.54);
+    // সঠিক পদ্ধতি: মোট ইঞ্চিকে ২.৫৪ দিয়ে গুণ করা
+    return heightInInches * 2.54;
   }
 
   int get heightInInches => (heightFeet * 12) + heightInches;
