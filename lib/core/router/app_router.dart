@@ -7,6 +7,8 @@ import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/register_screen.dart';
 import '../../features/auth/presentation/screens/forgot_password_screen.dart';
 import '../../features/auth/presentation/screens/profile_screen.dart';
+import '../../features/auth/presentation/screens/privacy_policy_screen.dart';
+import '../../features/auth/presentation/screens/about_app_screen.dart';
 import '../../features/onboarding/presentation/screens/splash_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
@@ -235,6 +237,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/smoking/breathing',
         builder: (context, state) => const BreathingExerciseScreen(),
+      ),
+      GoRoute(
+        path: '/privacy-policy',
+        builder: (context, state) => const PrivacyPolicyScreen(),
+      ),
+      GoRoute(
+        path: '/about',
+        builder: (context, state) => const AboutAppScreen(),
       ),
     ],
   );

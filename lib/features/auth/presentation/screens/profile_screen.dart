@@ -216,7 +216,7 @@ class ProfileScreen extends ConsumerWidget {
           theme,
           icon: Icons.privacy_tip_outlined,
           title: 'গোপনীয়তা নীতি',
-          onTap: () {},
+          onTap: () => context.push('/privacy-policy'),
         ),
         _buildListTile(
           context,
@@ -224,7 +224,7 @@ class ProfileScreen extends ConsumerWidget {
           icon: Icons.info_outline,
           title: 'অ্যাপ সম্পর্কে',
           trailing: Text('v1.0.0', style: theme.textTheme.bodySmall),
-          onTap: () {},
+          onTap: () => context.push('/about'),
         ),
       ],
     );
